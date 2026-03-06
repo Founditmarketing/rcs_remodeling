@@ -11,6 +11,7 @@ import Reviews from './pages/Reviews';
 import BlogIndex from './pages/BlogIndex';
 import BlogPost from './pages/BlogPost';
 import Contact from './pages/Contact';
+import Color from './pages/Color';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -37,6 +38,7 @@ export default function App() {
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/color" element={<Color />} />
           </Routes>
         </main>
         <Footer />
