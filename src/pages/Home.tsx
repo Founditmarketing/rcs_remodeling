@@ -116,31 +116,46 @@ export default function Home() {
         {/* Cinematic Background Slider */}
         <div className="absolute inset-0 z-0 text-white">
           <div className="absolute inset-0 bg-obsidian/30 z-10" />
+
           <AnimatePresence mode="sync">
-            {isFirstVisit && !showRealImage && (
-              <motion.img
-                key="blueprint"
-                src="/Blueprint.png"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.8 }}
-                exit={{ opacity: 0, transition: { duration: 2 } }}
-                transition={{ duration: 1.5 }}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            )}
-            {showRealImage && (
-              <motion.img
-                key={isFirstVisit && heroIndex === 0 ? 'initial-hero' : heroIndex}
-                src={kitchenImages[heroIndex]}
-                initial={{ opacity: 0, scale: 1.1 }}
-                animate={{ opacity: 0.7, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: isFirstVisit && heroIndex === 0 ? 3 : 4 }}
-                className="absolute inset-0 w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            )}
+            <motion.img
+              key={isFirstVisit && heroIndex === 0 ? 'initial-hero' : heroIndex}
+              src={kitchenImages[heroIndex]}
+              initial={{ opacity: 0, scale: 1.1 }}
+              animate={{ opacity: 0.7, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 4 }}
+              className="absolute inset-0 w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
           </AnimatePresence>
+
+          {/* Diagonal Reveal Overlay (Blueprint to Reality) */}
+          {isFirstVisit && (
+            <motion.div
+              initial={{ opacity: 0, WebkitMaskPosition: '0% 0%', maskPosition: '0% 0%' }}
+              animate={{
+                opacity: showRealImage ? [0.8, 0.8, 0] : 0.8,
+                WebkitMaskPosition: showRealImage ? '100% 100%' : '0% 0%',
+                maskPosition: showRealImage ? '100% 100%' : '0% 0%'
+              }}
+              transition={{
+                opacity: { duration: 3, times: [0, 0.7, 1], ease: "linear" },
+                WebkitMaskPosition: { duration: 2.5, ease: "easeInOut", delay: 1.5 },
+                maskPosition: { duration: 2.5, ease: "easeInOut", delay: 1.5 }
+              }}
+              className="absolute inset-0 z-20 pointer-events-none"
+              style={{
+                backgroundImage: 'url(/Blueprint.png)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                WebkitMaskImage: 'linear-gradient(135deg, black 33%, transparent 66%)',
+                maskImage: 'linear-gradient(135deg, black 33%, transparent 66%)',
+                WebkitMaskSize: '400% 400%',
+                maskSize: '400% 400%',
+              }}
+            />
+          )}
         </div>
 
         <div className="relative z-20 max-w-5xl mx-auto text-center">
