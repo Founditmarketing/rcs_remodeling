@@ -475,98 +475,98 @@ export const REVIEWS: Review[] = [
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: '1',
-    title: 'Modern Kitchen Overhaul',
+    title: 'Modern Kitchen Restoration',
     category: 'Remodeling',
     imageBefore: '/page-images/kitchen-1.jpg',
     imageAfter: '/page-images/kitchen-4.jpg'
   },
   {
     id: '2',
-    title: 'Full House Gut',
-    category: 'Demolition',
+    title: 'Complete Culinary Overhaul',
+    category: 'Remodeling',
     imageBefore: '/page-images/rcs-demo-hammer.png',
     imageAfter: '/page-images/kitchen-5.jpg'
   },
   {
     id: '3',
-    title: 'Hoarder House Recovery',
+    title: 'Post-Construction Cleanup',
     category: 'Cleanup',
     imageBefore: '/page-images/clean-up-1.jpg',
     imageAfter: '/page-images/clean-up-3.jpg'
   },
   {
     id: '4',
-    title: 'Luxury Master Bath',
+    title: 'Master Suite Refresh',
     category: 'Remodeling',
     imageBefore: '/page-images/rcs-bath-claw.jpg',
     imageAfter: '/page-images/untitled-design-14.png'
   },
   {
     id: '5',
-    title: 'Commercial Debris Clear',
+    title: 'Bulk Debris Removal',
     category: 'Debris Removal',
     imageBefore: '/page-images/rcs-debris-1-1800x1350.png',
     imageAfter: '/page-images/rcs-debris-18-13-3.png'
   },
   {
     id: '6',
-    title: 'Structural Demolition',
+    title: 'Precision Structural Demo',
     category: 'Demolition',
     imageBefore: '/page-images/rcs-demo-hammer.png',
     imageAfter: '/page-images/untitled-design-110.png'
   },
   {
     id: '7',
-    title: 'Post-Storm Cleanup',
+    title: 'Storm Damage Recovery',
     category: 'Cleanup',
     imageBefore: '/page-images/debris-5.jpg',
     imageAfter: '/page-images/debris-6.jpg'
   },
   {
     id: '8',
-    title: 'Squatter Site Recovery',
+    title: 'Hazardous Site Remediation',
     category: 'Squatter Removal',
     imageBefore: '/page-images/debris-6.jpg',
     imageAfter: '/page-images/untitled-design-111-1.png'
   },
   {
     id: '9',
-    title: 'Open Concept Living',
+    title: 'Full Property Restoration',
     category: 'Remodeling',
     imageBefore: '/page-images/kitchen-3.webp',
     imageAfter: '/page-images/untitled-design-108.png'
   },
   {
     id: '10',
-    title: 'Garage Demolition',
+    title: 'Garage & Outbuilding Demo',
     category: 'Demolition',
     imageBefore: '/page-images/rcs-demo-hammer.png',
     imageAfter: '/page-images/untitled-design-114.png'
   },
   {
     id: '11',
-    title: 'Estate Debris Removal',
+    title: 'Estate Clear-out & Prep',
     category: 'Debris Removal',
     imageBefore: '/page-images/rcs-debris-1-1800x1350.png',
     imageAfter: '/page-images/untitled-design-118.png'
   },
   {
     id: '12',
-    title: 'Basement Restoration',
+    title: 'Living Space Expansion',
     category: 'Remodeling',
     imageBefore: '/page-images/drill-hammer-1.jpg',
     imageAfter: '/page-images/untitled-design-8.png'
   },
   {
     id: '13',
-    title: 'Industrial Cleanup',
+    title: 'Deep Sanitization Service',
     category: 'Cleanup',
     imageBefore: '/page-images/clean-up-1.jpg',
     imageAfter: '/page-images/untitled-design-110-1.png'
   },
   {
     id: '14',
-    title: 'Pool House Remodel',
+    title: 'Main Floor Modernization',
     category: 'Remodeling',
     imageBefore: '/page-images/kitchen-1.jpg',
     imageAfter: '/page-images/untitled-design-10.png'
