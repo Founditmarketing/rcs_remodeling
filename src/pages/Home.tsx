@@ -262,7 +262,7 @@ export default function Home() {
                   </div>
                   <CheckCircle2 className="text-accent" size={24} />
                 </div>
-              </div>
+              </motion.div>
             ))}
             interval={5000}
           />
