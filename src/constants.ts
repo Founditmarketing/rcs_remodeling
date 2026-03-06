@@ -562,12 +562,6 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     imageAfter: '/page-images/untitled-design-8.png'
   },
   {
-    id: '13',
-    category: 'Cleanup',
-    imageBefore: '/page-images/clean-up-1.jpg',
-    imageAfter: '/page-images/untitled-design-110-1.png'
-  },
-  {
     id: '14',
     category: 'Remodeling',
     imageBefore: '/page-images/kitchen-1.jpg',
