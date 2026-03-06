@@ -24,6 +24,30 @@ const LaserBeam = ({ top, delay = 0, duration = 2, vertical = false }: { top?: s
   </div>
 );
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, filter: 'blur(10px)' },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: {
+      duration: 0.8,
+      ease: [0.22, 1, 0.36, 1]
+    }
+  }
+};
+
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -82,26 +106,47 @@ export default function Home() {
         </div>
 
         <div className="relative z-20 max-w-5xl mx-auto text-center">
-          <div>
-            <span className="inline-block px-4 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-mono uppercase tracking-[0.3em] mb-6">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.span
+              variants={itemVariants}
+              className="inline-block px-4 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-mono uppercase tracking-[0.3em] mb-6"
+            >
               Dallas-Fort Worth's Elite Remodelers
-            </span>
-            <h1 className="text-5xl md:text-8xl font-display font-black text-white leading-[0.9] mb-8 tracking-tighter">
+            </motion.span>
+
+            <motion.h1
+              variants={itemVariants}
+              className="text-5xl md:text-8xl font-display font-black text-white leading-[0.9] mb-8 tracking-tighter"
+            >
               WE BUILD <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-400">LEGACIES.</span>
-            </h1>
-            <p className="text-zinc-200 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-[#00a2ff] to-cyan-400 drop-shadow-[0_0_15px_rgba(0,127,255,0.3)]">
+                LEGACIES.
+              </span>
+            </motion.h1>
+
+            <motion.p
+              variants={itemVariants}
+              className="text-zinc-200 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
+            >
               Premium remodeling, demolition, and cleanup services for those who demand perfection. No jargon. No shortcuts. Just elite results.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            </motion.p>
+
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row items-center justify-center gap-6"
+            >
               <Link to="/contact" className="btn-primary w-full sm:w-auto">
                 Start Your Project
               </Link>
               <Link to="/services" className="btn-outline w-full sm:w-auto flex items-center justify-center gap-2">
                 Explore Services <ArrowRight size={18} />
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
         {/* Scroll Indicator */}
