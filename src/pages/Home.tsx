@@ -21,7 +21,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setInterval(() => {
       setHeroIndex((prev) => (prev + 1) % kitchenImages.length);
-    }, 6000);
+    }, 10000);
     return () => clearInterval(timer);
   }, [kitchenImages.length]);
 
@@ -39,7 +39,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 1.1 }}
               animate={{ opacity: 0.4, scale: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 2 }}
+              transition={{ duration: 4 }}
               className="absolute inset-0 w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
@@ -47,18 +47,6 @@ export default function Home() {
           {/* Animated Glows */}
           <div className="absolute top-1/4 -left-20 w-96 h-96 bg-accent/20 blur-[120px] rounded-full animate-pulse" />
           <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-accent/10 blur-[120px] rounded-full animate-pulse delay-1000" />
-
-          {/* Hero Dots */}
-          <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-            {kitchenImages.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setHeroIndex(idx)}
-                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${heroIndex === idx ? 'bg-accent w-6' : 'bg-white/20'
-                  }`}
-              />
-            ))}
-          </div>
         </div>
 
         <div className="relative z-20 max-w-5xl mx-auto text-center">
