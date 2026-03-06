@@ -1,26 +1,64 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Star, Shield, Zap, CheckCircle2, Calendar, User } from 'lucide-react';
+import { ArrowRight, Star, Shield, Zap, CheckCircle2, Calendar, User, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SERVICES, REVIEWS, GALLERY_ITEMS, BLOG_POSTS } from '../constants';
+import Carousel from '../components/Carousel';
+import { useState, useEffect } from 'react';
+import { AnimatePresence } from 'motion/react';
 
 export default function Home() {
+  const kitchenImages = [
+    '/page-images/kitchen-1.jpg',
+    '/page-images/kitchen-4.jpg',
+    '/page-images/kitchen-5.jpg',
+    '/page-images/untitled-design-14.png',
+    '/page-images/untitled-design-108.png'
+  ];
+
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHeroIndex((prev) => (prev + 1) % kitchenImages.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [kitchenImages.length]);
+
   return (
     <div className="relative">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden px-6">
-        {/* Cinematic Background Placeholder */}
+        {/* Cinematic Background Slider */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-obsidian/60 z-10" />
-          <img
-            src="/page-images/kitchen-4.jpg"
-            alt="Elite DFW Kitchen Remodeling"
-            className="w-full h-full object-cover opacity-40"
-            referrerPolicy="no-referrer"
-          />
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={heroIndex}
+              src={kitchenImages[heroIndex]}
+              initial={{ opacity: 0, scale: 1.1 }}
+              animate={{ opacity: 0.4, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 2 }}
+              className="absolute inset-0 w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </AnimatePresence>
           {/* Animated Glows */}
           <div className="absolute top-1/4 -left-20 w-96 h-96 bg-accent/20 blur-[120px] rounded-full animate-pulse" />
           <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-accent/10 blur-[120px] rounded-full animate-pulse delay-1000" />
+
+          {/* Hero Dots */}
+          <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+            {kitchenImages.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setHeroIndex(idx)}
+                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${heroIndex === idx ? 'bg-accent w-6' : 'bg-white/20'
+                  }`}
+              />
+            ))}
+          </div>
         </div>
 
         <div className="relative z-20 max-w-5xl mx-auto text-center">
@@ -149,14 +187,10 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {GALLERY_ITEMS.slice(0, 3).map((item, i) => (
-              <motion.div
+          <Carousel
+            items={GALLERY_ITEMS.slice(0, 8).map((item, i) => (
+              <div
                 key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
                 className="group relative h-[450px] rounded-3xl overflow-hidden glass-card"
               >
                 <Link to="/gallery" className="block h-full w-full">
@@ -170,15 +204,10 @@ export default function Home() {
                     <span className="text-accent font-mono text-xs uppercase mb-2">{item.category}</span>
                   </div>
                 </Link>
-              </motion.div>
+              </div>
             ))}
-          </div>
-
-          <div className="mt-16 text-center">
-            <Link to="/gallery" className="btn-outline">
-              View Full Gallery
-            </Link>
-          </div>
+            interval={4000}
+          />
         </div>
       </section>
 
@@ -192,17 +221,13 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {REVIEWS.map((review, i) => (
-              <motion.div
+          <Carousel
+            items={REVIEWS.map((review, i) => (
+              <div
                 key={review.id}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.2 }}
-                className="glass-card p-8"
+                className="glass-card p-8 h-full flex flex-col"
               >
-                <p className="text-zinc-300 italic mb-8">"{review.text}"</p>
+                <p className="text-zinc-300 italic mb-8 flex-grow">"{review.text}"</p>
                 <div className="flex items-center justify-between">
                   <div>
                     <h4 className="text-white font-bold">{review.name}</h4>
@@ -210,9 +235,10 @@ export default function Home() {
                   </div>
                   <CheckCircle2 className="text-accent" size={24} />
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </div>
+            interval={5000}
+          />
         </div>
       </section>
 
@@ -231,15 +257,11 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {BLOG_POSTS.slice(0, 3).map((post, i) => (
-              <motion.article
+          <Carousel
+            items={BLOG_POSTS.slice(0, 8).map((post, i) => (
+              <article
                 key={post.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group flex flex-col h-full glass-card overflow-hidden glow-border"
+                className="group flex flex-col h-[500px] glass-card overflow-hidden glow-border"
               >
                 <div className="relative h-48 overflow-hidden">
                   <img
@@ -263,9 +285,10 @@ export default function Home() {
                     Read More <ArrowRight size={16} />
                   </Link>
                 </div>
-              </motion.article>
+              </article>
             ))}
-          </div>
+            interval={6000}
+          />
         </div>
       </section>
 

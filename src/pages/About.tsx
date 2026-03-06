@@ -34,7 +34,7 @@ export default function About() {
             />
             <div className="absolute -bottom-10 -right-10 w-64 h-64 glass-card p-8 hidden md:block">
               <h4 className="text-accent font-black text-4xl mb-2">15+</h4>
-              <p className="text-zinc-400 text-sm font-mono uppercase">Years of Combined Experience</p>
+              <p className="text-white text-sm font-mono uppercase">Years of Combined Experience</p>
             </div>
           </div>
           <div>

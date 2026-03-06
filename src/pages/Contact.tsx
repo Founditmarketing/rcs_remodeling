@@ -69,24 +69,19 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Google Maps Link */}
-            <a
-              href="https://www.google.com/maps/place/12445+Amy+Ln,+Terrell,+TX+75161/@32.7217166,-96.1319602,1012m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8649436b4f02733b:0xdf878be55438e8f1!8m2!3d32.7217166!4d-96.1319602!16s%2Fg%2F11h9r7lhl0?entry=ttu&g_ep=EgoyMDI2MDMwMi4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block h-80 rounded-3xl overflow-hidden relative border border-white/10 group/map"
-            >
-              <div className="absolute inset-0 bg-slate-dark flex items-center justify-center text-center p-10 group-hover:bg-accent/5 transition-colors duration-500">
-                <div>
-                  <MapPin className="text-accent mx-auto mb-4 group-hover:scale-110 transition-transform" size={48} />
-                  <p className="text-white font-bold mb-2 uppercase tracking-widest">Terrell, TX Headquarters</p>
-                  <p className="text-zinc-500 text-sm">12445 Amy Lane, Terrell, TX 75160</p>
-                  <span className="text-accent text-[10px] font-mono mt-4 inline-block border-b border-accent/0 group-hover:border-accent/100 transition-all">
-                    Click to Open in Google Maps
-                  </span>
-                </div>
-              </div>
-            </a>
+            {/* Google Maps Embed */}
+            <div className="h-80 rounded-3xl overflow-hidden relative border border-white/10 group/map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4405.6135165783335!2d-96.1319602!3d32.72171660000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8649436b4f02733b%3A0xdf878be55438e8f1!2s12445%20Amy%20Ln%2C%20Terrell%2C%20TX%2075161!5e1!3m2!1sen!2sus!4v1772815894715!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="opacity-70 group-hover:opacity-100 transition-opacity duration-700"
+              ></iframe>
+            </div>
           </div>
 
           {/* Contact Form */}
