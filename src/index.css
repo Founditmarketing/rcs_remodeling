@@ -5,9 +5,11 @@
   --font-display: "Outfit", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  --color-obsidian: #262626; /* Basalt Base */
+  --color-obsidian: #262626;
+  /* Basalt Base */
   --color-slate-dark: #1a1a1a;
-  --color-accent: #007fff; /* Azure Accent */
+  --color-accent: #007fff;
+  /* Azure Accent */
   --color-accent-glow: rgba(0, 127, 255, 0.4);
 }
 
@@ -16,7 +18,12 @@
     @apply bg-obsidian text-zinc-100 font-sans antialiased selection:bg-accent selection:text-white;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display font-bold tracking-tight;
   }
 }
@@ -25,7 +32,7 @@
   .glass-card {
     @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
   }
-  
+
   .glow-border {
     @apply relative after:absolute after:inset-0 after:rounded-[inherit] after:border after:border-accent/20 after:pointer-events-none hover:after:border-accent/50 transition-all duration-500;
   }
@@ -35,7 +42,7 @@
   }
 
   .btn-primary {
-    @apply relative px-8 py-4 bg-accent text-white font-bold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(242,125,38,0.3)] hover:shadow-[0_0_30px_rgba(242,125,38,0.5)];
+    @apply relative px-8 py-4 bg-accent text-white font-bold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_var(--color-accent-glow)] hover:shadow-[0_0_30px_var(--color-accent-glow)];
   }
 
   .btn-outline {
@@ -46,7 +53,7 @@
 /* Custom Mesh Gradient Background */
 .mesh-gradient {
   background-color: #262626;
-  background-image: 
+  background-image:
     radial-gradient(at 0% 0%, rgba(0, 127, 255, 0.05) 0px, transparent 50%),
     radial-gradient(at 100% 0%, rgba(30, 30, 35, 1) 0px, transparent 50%),
     radial-gradient(at 100% 100%, rgba(0, 127, 255, 0.05) 0px, transparent 50%),
@@ -57,6 +64,7 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -70,9 +78,17 @@
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .animate-float {
