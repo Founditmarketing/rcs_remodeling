@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="col-span-1 md:col-span-1">
           <Link to="/" className="flex items-center gap-2 mb-6 group">
             <img
-              src="/LOGO.png"
+              src="/logo.png"
               alt="RCS Remodeling"
               className="h-10 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity"
             />
