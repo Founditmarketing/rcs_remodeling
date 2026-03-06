@@ -77,7 +77,7 @@ export const SERVICES: Service[] = [
     slug: 'squatter-removal',
     description: 'Comprehensive property recovery services including cleanup, securing, and restoration after unauthorized occupancy.',
     icon: 'ShieldAlert',
-    image: '/page-images/debris-6.jpg',
+    image: '/page-images/squatter-house.png',
     features: ['Hazardous Waste Removal', 'Lock Replacement', 'Property Board-up', 'Damage Assessment'],
     process: [
       { step: 'Secure Site', description: 'Ensuring the property is legally vacant and secured.' },
