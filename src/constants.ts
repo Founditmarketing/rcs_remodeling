@@ -448,27 +448,43 @@ export const BLOG_POSTS: BlogPost[] = [
 export const REVIEWS: Review[] = [
   {
     id: '1',
-    name: 'Sarah Jenkins',
-    location: 'Dallas, TX',
+    name: 'Michael Carroll',
+    location: 'DFW Area',
     rating: 5,
-    text: 'RCS transformed our 1970s kitchen into a modern dream. Their attention to detail is unmatched in DFW.',
-    date: 'March 2026'
+    text: 'Thank you all for the prompt service and professionalism bestowed to our family. The room addition has worked wonders for our newest family member.',
+    date: 'September 2024'
   },
   {
     id: '2',
-    name: 'Michael Rodriguez',
-    location: 'Terrell, TX',
+    name: 'Keitha Reynolds',
+    location: 'DFW Area',
     rating: 5,
-    text: 'Fast, professional demolition of our old barn. They left the site cleaner than they found it. Highly recommend!',
-    date: 'February 2026'
+    text: 'William and his crew really went out of their way to take care of us. Even with such a short notice, he was quick to response and very accommodating. Great group of guys and I would definitely use them again.',
+    date: 'September 2024'
   },
   {
     id: '3',
-    name: 'Amanda Lee',
-    location: 'Forney, TX',
+    name: 'Janna Koenig',
+    location: 'DFW Area',
     rating: 5,
-    text: 'The cleanup crew was a lifesaver after our renovation. Not a speck of dust left behind. Worth every penny.',
-    date: 'January 2026'
+    text: 'RCS did outstanding job! Very reliable and respectful. I would definitely recommend RCS!',
+    date: 'September 2024'
+  },
+  {
+    id: '4',
+    name: 'Mark Pierce',
+    location: 'East Dallas',
+    rating: 5,
+    text: 'I highly recommend RCS Remodeling! Will was a great help for my house in East Dallas. Fast at responding and they did great work!',
+    date: 'April 2025'
+  },
+  {
+    id: '5',
+    name: 'tomsyd62 wood',
+    location: 'DFW Area',
+    rating: 5,
+    text: 'Thank you all for the prompt service and professionalism bestowed to our family. The room addition has worked wonders for our newest family member.',
+    date: 'October 2024'
   }
 ];
 
