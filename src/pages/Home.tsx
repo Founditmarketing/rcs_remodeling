@@ -7,21 +7,42 @@ import Carousel from '../components/Carousel';
 import { useState, useEffect } from 'react';
 import { AnimatePresence, useScroll, useSpring } from 'motion/react';
 
-const FloatingOrb = ({ className, delay = 0 }: { className: string; delay?: number }) => (
-  <motion.div
-    animate={{
-      y: [0, -20, 0],
-      x: [0, 10, 0],
-      scale: [1, 1.1, 1],
-    }}
-    transition={{
-      duration: 10 + Math.random() * 5,
-      repeat: Infinity,
-      delay,
-      ease: "easeInOut",
-    }}
-    className={`absolute rounded-full blur-[100px] pointer-events-none ${className}`}
-  />
+const AmbientLines = () => (
+  <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+    <motion.div
+      animate={{
+        x: ['-100%', '100%'],
+      }}
+      transition={{
+        duration: 20,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+      className="absolute top-1/4 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent"
+    />
+    <motion.div
+      animate={{
+        x: ['100%', '-100%'],
+      }}
+      transition={{
+        duration: 25,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+      className="absolute top-2/4 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"
+    />
+    <motion.div
+      animate={{
+        x: ['-100%', '100%'],
+      }}
+      transition={{
+        duration: 30,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+      className="absolute top-3/4 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent/10 to-transparent"
+    />
+  </div>
 );
 
 export default function Home() {
@@ -59,9 +80,8 @@ export default function Home() {
 
       {/* Background Ambience */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <FloatingOrb className="top-1/4 -left-20 w-96 h-96 bg-accent/10" />
-        <FloatingOrb className="bottom-1/4 -right-20 w-[500px] h-[500px] bg-accent/5" delay={2} />
-        <FloatingOrb className="top-3/4 left-1/2 w-80 h-80 bg-orange-500/5" delay={4} />
+        <AmbientLines />
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(20,20,20,0)_0%,rgba(10,10,10,0.5)_100%)]" />
       </div>
 
       {/* Hero Section */}
@@ -81,9 +101,6 @@ export default function Home() {
               referrerPolicy="no-referrer"
             />
           </AnimatePresence>
-          {/* Animated Glows */}
-          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-accent/20 blur-[120px] rounded-full animate-pulse" />
-          <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-accent/10 blur-[120px] rounded-full animate-pulse delay-1000" />
         </div>
 
         <div className="relative z-20 max-w-5xl mx-auto text-center">
@@ -155,12 +172,18 @@ export default function Home() {
       <section className="py-32 px-6 bg-slate-dark relative">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:row items-end justify-between mb-20 gap-8">
-            <div className="max-w-2xl">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="max-w-2xl"
+            >
               <span className="text-accent font-mono text-xs uppercase tracking-widest mb-4 block">Our Expertise</span>
               <h2 className="text-4xl md:text-6xl font-display font-black text-white tracking-tighter leading-none">
                 ELITE SERVICES <br /> FOR ELITE HOMES.
               </h2>
-            </div>
+            </motion.div>
             <Link to="/services" className="text-accent font-bold flex items-center gap-2 hover:gap-4 transition-all">
               View All Services <ArrowRight size={20} />
             </Link>
@@ -171,8 +194,14 @@ export default function Home() {
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 whileHover={{ y: -10, rotateX: 2, rotateY: 2 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                viewport={{ once: true }}
+                transition={{
+                  scale: { delay: i * 0.1 },
+                  opacity: { delay: i * 0.1 },
+                  y: { type: "spring", stiffness: 300, damping: 20 }
+                }}
                 className="group relative h-[400px] rounded-3xl overflow-hidden w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] shadow-2xl"
               >
                 <Link to={`/services/${service.slug}`} className="block h-full w-full">
@@ -200,12 +229,18 @@ export default function Home() {
       <section className="py-32 px-6 bg-obsidian relative">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:row items-end justify-between mb-20 gap-8">
-            <div className="max-w-2xl">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="max-w-2xl"
+            >
               <span className="text-accent font-mono text-xs uppercase tracking-widest mb-4 block">Our Portfolio</span>
               <h2 className="text-4xl md:text-6xl font-display font-black text-white tracking-tighter leading-none">
                 RECENT <br /> TRANSFORMATIONS.
               </h2>
-            </div>
+            </motion.div>
             <Link to="/gallery" className="text-accent font-bold flex items-center gap-2 hover:gap-4 transition-all">
               View Full Gallery <ArrowRight size={20} />
             </Link>
@@ -273,12 +308,18 @@ export default function Home() {
       <section className="py-32 px-6 bg-obsidian relative">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:row items-end justify-between mb-20 gap-8">
-            <div className="max-w-2xl">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="max-w-2xl"
+            >
               <span className="text-accent font-mono text-xs uppercase tracking-widest mb-4 block">The Authority</span>
               <h2 className="text-4xl md:text-6xl font-display font-black text-white tracking-tighter leading-none">
                 LATEST <br /> INSIGHTS.
               </h2>
-            </div>
+            </motion.div>
             <Link to="/blog" className="text-accent font-bold flex items-center gap-2 hover:gap-4 transition-all">
               Read All Articles <ArrowRight size={20} />
             </Link>
@@ -324,7 +365,14 @@ export default function Home() {
       <section className="py-32 px-6 bg-slate-dark">
         <div className="max-w-5xl mx-auto glass-card p-12 md:p-20 text-center relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent" />
-          <h2 className="text-4xl md:text-6xl font-display font-black text-white mb-8">READY TO TRANSFORM?</h2>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <h2 className="text-4xl md:text-6xl font-display font-black text-white mb-8">READY TO TRANSFORM?</h2>
+          </motion.div>
           <p className="text-zinc-400 text-lg mb-12 max-w-xl mx-auto">
             Don't settle for average. Get the premium DFW remodeling experience you deserve.
           </p>
