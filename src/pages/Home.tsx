@@ -114,31 +114,34 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden px-6">
         {/* Cinematic Background Slider */}
-        <AnimatePresence mode="sync">
-          {isFirstVisit && !showRealImage && (
-            <motion.img
-              key="blueprint"
-              src="/Blueprint.png"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.8 }}
-              exit={{ opacity: 0, transition: { duration: 2 } }}
-              transition={{ duration: 1.5 }}
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          )}
-          {showRealImage && (
-            <motion.img
-              key={isFirstVisit && heroIndex === 0 ? 'initial-hero' : heroIndex}
-              src={kitchenImages[heroIndex]}
-              initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 0.7, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: isFirstVisit && heroIndex === 0 ? 3 : 4 }}
-              className="absolute inset-0 w-full h-full object-cover"
-              referrerPolicy="no-referrer"
-            />
-          )}
-        </AnimatePresence>
+        <div className="absolute inset-0 z-0 text-white">
+          <div className="absolute inset-0 bg-obsidian/30 z-10" />
+          <AnimatePresence mode="sync">
+            {isFirstVisit && !showRealImage && (
+              <motion.img
+                key="blueprint"
+                src="/Blueprint.png"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.8 }}
+                exit={{ opacity: 0, transition: { duration: 2 } }}
+                transition={{ duration: 1.5 }}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            )}
+            {showRealImage && (
+              <motion.img
+                key={isFirstVisit && heroIndex === 0 ? 'initial-hero' : heroIndex}
+                src={kitchenImages[heroIndex]}
+                initial={{ opacity: 0, scale: 1.1 }}
+                animate={{ opacity: 0.7, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: isFirstVisit && heroIndex === 0 ? 3 : 4 }}
+                className="absolute inset-0 w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            )}
+          </AnimatePresence>
+        </div>
 
         <div className="relative z-20 max-w-5xl mx-auto text-center">
           <motion.div
