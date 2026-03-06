@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Hammer, Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Hammer, Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -17,14 +17,6 @@ export default function Footer() {
           <p className="text-zinc-500 text-sm leading-relaxed mb-6">
             Premium remodeling, demolition, and cleanup services in the Dallas-Fort Worth area. Built on the foundation of Honesty, Integrity, and Transparency.
           </p>
-          <div className="flex gap-4">
-            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent transition-colors">
-              <Facebook size={18} />
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent transition-colors">
-              <Instagram size={18} />
-            </a>
-          </div>
         </div>
 
         <div>
