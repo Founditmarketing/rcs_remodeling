@@ -36,7 +36,6 @@ export default function BlogPost() {
               src={post.image}
               alt={post.title}
               className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
             />
           </div>
 
@@ -45,29 +44,25 @@ export default function BlogPost() {
               {post.excerpt}
             </p>
 
-            {/* Full article content placeholder - in a real app this would be rich text */}
             <div className="space-y-6">
               <p>{post.content}</p>
-              <p>
-                When it comes to property in North Texas, the stakes are high. Whether you're dealing with the intense summer heat or the unpredictable spring storms, your home's structural integrity and aesthetic appeal are paramount. At RCS Remodeling, we've seen it all—from the historic homes in Terrell to the modern estates in Dallas.
-              </p>
-              <h3 className="text-2xl font-display font-bold text-white mt-12">The Professional Advantage</h3>
-              <p>
-                Many homeowners consider the DIY route to save a few dollars, but the hidden costs often outweigh the initial savings. Professional demolition, for instance, isn't just about swinging a hammer; it's about understanding load-bearing points, utility lines, and environmental hazards.
-              </p>
-              <img
-                src="/blog-images/wall-destruction.png"
-                alt="Process"
-                className="rounded-2xl w-full my-12"
-                referrerPolicy="no-referrer"
-              />
-              <p>
-                Our H.I.T. values (Honesty, Integrity, Transparency) ensure that you're never in the dark. We provide daily updates and clear milestones so you can watch your vision come to life without the stress usually associated with major renovations.
-              </p>
-              <p>
-                If you're ready to take the next step in your property's evolution, our team is standing by to provide a comprehensive assessment and an elite plan of action.
-              </p>
             </div>
+
+            {post.sections.map((section, i) => (
+              <div key={i} className="space-y-6">
+                {section.heading && (
+                  <h3 className="text-2xl font-display font-bold text-white mt-12">{section.heading}</h3>
+                )}
+                <p>{section.text}</p>
+                {section.image && (
+                  <img
+                    src={section.image}
+                    alt={section.imageAlt || section.heading || 'Article image'}
+                    className="rounded-2xl w-full my-12"
+                  />
+                )}
+              </div>
+            ))}
           </div>
 
           <div className="mt-20 pt-10 border-t border-white/5 flex items-center justify-between">
