@@ -69,17 +69,24 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Dark Mode Map Placeholder */}
-            <div className="h-80 rounded-3xl overflow-hidden relative border border-white/10">
-              <div className="absolute inset-0 bg-slate-dark flex items-center justify-center text-center p-10">
+            {/* Google Maps Link */}
+            <a
+              href="https://www.google.com/maps/place/12445+Amy+Ln,+Terrell,+TX+75161/@32.7217166,-96.1319602,1012m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8649436b4f02733b:0xdf878be55438e8f1!8m2!3d32.7217166!4d-96.1319602!16s%2Fg%2F11h9r7lhl0?entry=ttu&g_ep=EgoyMDI2MDMwMi4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block h-80 rounded-3xl overflow-hidden relative border border-white/10 group/map"
+            >
+              <div className="absolute inset-0 bg-slate-dark flex items-center justify-center text-center p-10 group-hover:bg-accent/5 transition-colors duration-500">
                 <div>
-                  <MapPin className="text-accent mx-auto mb-4" size={48} />
-                  <p className="text-white font-bold mb-2">Terrell, TX Headquarters</p>
-                  <p className="text-zinc-500 text-sm">Interactive Map Loading...</p>
+                  <MapPin className="text-accent mx-auto mb-4 group-hover:scale-110 transition-transform" size={48} />
+                  <p className="text-white font-bold mb-2 uppercase tracking-widest">Terrell, TX Headquarters</p>
+                  <p className="text-zinc-500 text-sm">12445 Amy Lane, Terrell, TX 75160</p>
+                  <span className="text-accent text-[10px] font-mono mt-4 inline-block border-b border-accent/0 group-hover:border-accent/100 transition-all">
+                    Click to Open in Google Maps
+                  </span>
                 </div>
               </div>
-              {/* In a real app, embed Google Maps with dark styles here */}
-            </div>
+            </a>
           </div>
 
           {/* Contact Form */}
@@ -88,12 +95,18 @@ export default function Contact() {
               <ShieldCheck size={120} />
             </div>
             <h2 className="text-4xl font-display font-bold text-white mb-10">Request a Quote</h2>
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <form
+              action="https://formspree.io/f/your-form-id"
+              method="POST"
+              className="space-y-6"
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs font-mono uppercase tracking-widest text-zinc-500">Full Name</label>
                   <input
                     type="text"
+                    name="name"
+                    required
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
                     placeholder="John Doe"
                   />
@@ -102,6 +115,8 @@ export default function Contact() {
                   <label className="text-xs font-mono uppercase tracking-widest text-zinc-500">Phone Number</label>
                   <input
                     type="tel"
+                    name="phone"
+                    required
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
                     placeholder="469-000-0000"
                   />
@@ -111,13 +126,15 @@ export default function Contact() {
                 <label className="text-xs font-mono uppercase tracking-widest text-zinc-500">Email Address</label>
                 <input
                   type="email"
+                  name="email"
+                  required
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
                   placeholder="john@example.com"
                 />
               </div>
               <div className="space-y-2">
                 <label className="text-xs font-mono uppercase tracking-widest text-zinc-500">Service Needed</label>
-                <select className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all appearance-none">
+                <select name="service" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all appearance-none">
                   <option className="bg-obsidian">Remodeling</option>
                   <option className="bg-obsidian">Demolition</option>
                   <option className="bg-obsidian">Cleanup</option>
@@ -128,7 +145,9 @@ export default function Contact() {
               <div className="space-y-2">
                 <label className="text-xs font-mono uppercase tracking-widest text-zinc-500">Project Details</label>
                 <textarea
+                  name="message"
                   rows={5}
+                  required
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
                   placeholder="Tell us about your project..."
                 />

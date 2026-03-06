@@ -29,7 +29,7 @@ export default function About() {
             <img
               src="/page-images/rcs-room-add-1.jpg"
               alt="Elite DFW Remodeling Roots"
-              className="rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+              className="rounded-3xl shadow-2xl transition-all duration-700"
               referrerPolicy="no-referrer"
             />
             <div className="absolute -bottom-10 -right-10 w-64 h-64 glass-card p-8 hidden md:block">
@@ -38,26 +38,61 @@ export default function About() {
             </div>
           </div>
           <div>
-            <h2 className="text-4xl font-display font-bold text-white mb-8">A Legacy of Hard Work</h2>
+            <h2 className="text-4xl font-display font-bold text-white mb-8">WHO WE ARE</h2>
             <div className="space-y-6 text-zinc-400 leading-relaxed">
               <p>
-                RCS Remodeling isn't just another contracting firm. We are a team of North Texas natives who understand the unique challenges of DFW properties—from the shifting clay soils of Terrell to the high-end architectural demands of Highland Park.
+                RCS Remodeling is a premier, family-owned construction and restoration firm rooted in Terrell, Texas. We specialize in transforming residential and commercial properties across the Dallas-Fort Worth metroplex through high-precision remodeling, surgical demolition, and comprehensive site recovery. Our journey began with a single truck and a commitment to radical honesty, and today we stand as the region's most trusted partner for complex property projects.
               </p>
               <p>
-                We saw a gap in the market: too many contractors were hiding behind jargon and vague timelines. We decided to build a company focused on **Honesty, Integrity, and Transparency (H.I.T.)**.
-              </p>
-              <p>
-                Whether it's a full kitchen gut or a complex squatter removal cleanup, we bring the same level of intensity and professionalism to every square inch of your property.
+                We don't just "do construction." We solve property problems that others shy away from. Whether we're reclaiming a site from unauthorized occupancy or crafting a bespoke master suite, our approach remains the same: meticulous planning, elite-level execution, and a transparent communication loop that keeps you in control from the first swing of the hammer to the final walkthrough.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* Why Trust Us */}
       <section className="py-32 px-6 bg-obsidian">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="order-2 lg:order-1">
+              <h2 className="text-4xl font-display font-bold text-white mb-12">WHY TRUST US</h2>
+              <div className="space-y-8">
+                {[
+                  { title: 'Total Transparency', desc: 'You receive daily photo updates and line-itemized reporting, ensuring you know exactly where every dollar of your investment is going.' },
+                  { title: 'Local Expertise', desc: 'As North Texas natives, we understand the specific structural and environmental demands of DFW properties, from foundation shifting to local building codes.' },
+                  { title: 'Full-Spectrum Capability', desc: 'We are one of the few firms capable of handling both heavy structural demolition and high-end aesthetic remodeling under one roof.' },
+                  { title: 'Integrity-First Pricing', desc: 'We provide clear, honest estimates and fixed-price contracts to protect you from the hidden costs and "surprises" that plague the industry.' },
+                  { title: 'Elite Quality Control', desc: 'Every project undergoes a rigorous multi-point inspection by our leadership team to ensure it meets our "Elite Standard" before we sign off.' }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-6 group">
+                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
+                      <ShieldCheck className="text-accent" size={24} />
+                    </div>
+                    <div>
+                      <h4 className="text-white font-bold text-lg mb-2">{item.title}</h4>
+                      <p className="text-zinc-500 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <img
+                src="/page-images/drill-hammer-1.jpg"
+                alt="Elite Quality Control"
+                className="rounded-3xl shadow-2xl"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section className="py-32 px-6 bg-slate-dark">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-display font-bold text-white mb-20 text-center">OUR JOURNEY</h2>
+          <h2 className="text-4xl font-display font-bold text-white mb-20 text-center uppercase tracking-widest">Our Evolution</h2>
           <div className="space-y-12">
             {[
               { year: '2010', title: 'The Beginning', desc: 'Started as a small debris removal crew in Terrell, TX.' },
@@ -74,37 +109,6 @@ export default function About() {
                   <span className="text-accent font-mono font-bold text-xl">{item.year}</span>
                   <h3 className="text-2xl font-display font-bold text-white mt-2">{item.title}</h3>
                   <p className="text-zinc-500 mt-2">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Meet the Crew */}
-      <section className="py-32 px-6 bg-slate-dark">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-display font-bold text-white mb-4">THE ELITE SQUAD</h2>
-            <p className="text-zinc-500">The hands and minds behind the DFW's finest builds.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { name: 'Rick C.', role: 'Founder & Lead Strategist', bio: 'A Terrell native with a vision for transparent contracting.' },
-              { name: 'Sarah M.', role: 'Design Director', bio: 'Expert in modern Texas aesthetics and high-end finishes.' },
-              { name: 'Dave T.', role: 'Operations Chief', bio: 'Ensuring every demo and cleanup is executed with military precision.' }
-            ].map((member) => (
-              <div key={member.name} className="group relative h-[500px] rounded-3xl overflow-hidden glass-card">
-                <img
-                  src="/page-images/drill-hammer-1.jpg"
-                  alt={member.name}
-                  className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-obsidian to-transparent translate-y-20 group-hover:translate-y-0 transition-transform duration-500">
-                  <h4 className="text-2xl font-display font-bold text-white">{member.name}</h4>
-                  <p className="text-accent text-sm font-mono uppercase mb-4">{member.role}</p>
-                  <p className="text-zinc-400 text-sm opacity-0 group-hover:opacity-100 transition-opacity delay-200">{member.bio}</p>
                 </div>
               </div>
             ))}
