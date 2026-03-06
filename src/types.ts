@@ -40,7 +40,6 @@ export interface Review {
 
 export interface GalleryItem {
   id: string;
-  title: string;
   category: string;
   imageBefore: string;
   imageAfter: string;

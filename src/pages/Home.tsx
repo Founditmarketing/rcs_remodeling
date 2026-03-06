@@ -162,13 +162,12 @@ export default function Home() {
                 <Link to="/gallery" className="block h-full w-full">
                   <img
                     src={item.imageAfter}
-                    alt={item.title}
+                    alt={item.category}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60"
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent p-8 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <span className="text-accent font-mono text-xs uppercase mb-2">{item.category}</span>
-                    <h3 className="text-2xl font-display font-bold text-white mb-4">{item.title}</h3>
                   </div>
                 </Link>
               </motion.div>

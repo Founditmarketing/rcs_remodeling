@@ -7,8 +7,8 @@ export default function Gallery() {
   const [filter, setFilter] = useState('All');
   const categories = ['All', ...new Set(GALLERY_ITEMS.map(item => item.category))];
 
-  const filteredItems = filter === 'All' 
-    ? GALLERY_ITEMS 
+  const filteredItems = filter === 'All'
+    ? GALLERY_ITEMS
     : GALLERY_ITEMS.filter(item => item.category === filter);
 
   return (
@@ -36,11 +36,10 @@ export default function Gallery() {
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-6 py-2 rounded-full font-bold transition-all ${
-                filter === cat 
-                ? 'bg-accent text-white shadow-[0_0_15px_rgba(242,125,38,0.4)]' 
-                : 'bg-white/5 text-zinc-500 hover:text-white hover:bg-white/10'
-              }`}
+              className={`px-6 py-2 rounded-full font-bold transition-all ${filter === cat
+                  ? 'bg-accent text-white shadow-[0_0_15px_rgba(242,125,38,0.4)]'
+                  : 'bg-white/5 text-zinc-500 hover:text-white hover:bg-white/10'
+                }`}
             >
               {cat}
             </button>
@@ -63,15 +62,14 @@ export default function Gallery() {
               >
                 {/* Before/After Toggle Concept - Using hover for simplicity */}
                 <div className="relative h-full w-full">
-                  <img 
-                    src={item.imageAfter} 
-                    alt={item.title} 
+                  <img
+                    src={item.imageAfter}
+                    alt={item.category}
                     className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-110 opacity-60"
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <span className="text-accent font-mono text-[10px] uppercase mb-1">{item.category}</span>
-                    <h3 className="text-lg font-display font-bold text-white">{item.title}</h3>
                   </div>
                 </div>
               </motion.div>
