@@ -13,8 +13,8 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-obsidian/60 z-10" />
           <img
-            src="/page-images/untitled-design-108.png"
-            alt="Elite DFW Remodeling"
+            src="/page-images/kitchen-4.jpg"
+            alt="Elite DFW Kitchen Remodeling"
             className="w-full h-full object-cover opacity-40"
             referrerPolicy="no-referrer"
           />
