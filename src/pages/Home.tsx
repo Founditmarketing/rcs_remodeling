@@ -121,10 +121,13 @@ export default function Home() {
             <motion.img
               key={isFirstVisit && heroIndex === 0 ? 'initial-hero' : heroIndex}
               src={kitchenImages[heroIndex]}
-              initial={{ opacity: 0, scale: isFirstVisit && heroIndex === 0 ? 1 : 1.1 }}
+              initial={{ opacity: 0, scale: 1 }}
               animate={{ opacity: 0.7, scale: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 4 }}
+              transition={{
+                duration: isFirstVisit && heroIndex === 0 ? 3 : 4,
+                delay: isFirstVisit && heroIndex === 0 ? 1 : 0
+              }}
               className="absolute inset-0 w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
@@ -133,14 +136,14 @@ export default function Home() {
           {/* Diagonal Reveal Overlay (Blueprint to Reality) */}
           {isFirstVisit && (
             <motion.div
-              initial={{ opacity: 0, WebkitMaskPosition: '0% 0%', maskPosition: '0% 0%' }}
+              initial={{ opacity: 1, WebkitMaskPosition: '0% 0%', maskPosition: '0% 0%' }}
               animate={{
-                opacity: showRealImage ? [0.8, 0.8, 0] : 0.8,
+                opacity: showRealImage ? [1, 1, 0] : 1,
                 WebkitMaskPosition: showRealImage ? '100% 100%' : '0% 0%',
                 maskPosition: showRealImage ? '100% 100%' : '0% 0%'
               }}
               transition={{
-                opacity: { duration: 3.5, times: [0, 0.8, 1], ease: "linear" },
+                opacity: { duration: 4, times: [0, 0.8, 1], ease: "linear" },
                 WebkitMaskPosition: { duration: 3, ease: [0.645, 0.045, 0.355, 1], delay: 1.5 },
                 maskPosition: { duration: 3, ease: [0.645, 0.045, 0.355, 1], delay: 1.5 }
               }}
@@ -149,8 +152,8 @@ export default function Home() {
                 backgroundImage: 'url(/Blueprint.png)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                WebkitMaskImage: 'linear-gradient(135deg, black 45%, transparent 55%)',
-                maskImage: 'linear-gradient(135deg, black 45%, transparent 55%)',
+                WebkitMaskImage: 'linear-gradient(135deg, black 48%, transparent 52%)',
+                maskImage: 'linear-gradient(135deg, black 48%, transparent 52%)',
                 WebkitMaskSize: '300% 300%',
                 maskSize: '300% 300%',
               }}
