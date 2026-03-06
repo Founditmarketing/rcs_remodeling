@@ -92,16 +92,16 @@ export default function Contact() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs font-mono uppercase tracking-widest text-zinc-500">Full Name</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
                     placeholder="John Doe"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-mono uppercase tracking-widest text-zinc-500">Phone Number</label>
-                  <input 
-                    type="tel" 
+                  <input
+                    type="tel"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
                     placeholder="469-000-0000"
                   />
@@ -109,8 +109,8 @@ export default function Contact() {
               </div>
               <div className="space-y-2">
                 <label className="text-xs font-mono uppercase tracking-widest text-zinc-500">Email Address</label>
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
                   placeholder="john@example.com"
                 />
@@ -127,7 +127,7 @@ export default function Contact() {
               </div>
               <div className="space-y-2">
                 <label className="text-xs font-mono uppercase tracking-widest text-zinc-500">Project Details</label>
-                <textarea 
+                <textarea
                   rows={5}
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
                   placeholder="Tell us about your project..."
@@ -136,9 +136,6 @@ export default function Contact() {
               <button type="submit" className="btn-primary w-full flex items-center justify-center gap-3">
                 Send Message <Send size={18} />
               </button>
-              <p className="text-center text-zinc-600 text-[10px] font-mono uppercase tracking-widest pt-4">
-                By submitting, you agree to our privacy policy and terms.
-              </p>
             </form>
           </div>
         </div>
