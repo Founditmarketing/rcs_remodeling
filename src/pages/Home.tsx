@@ -121,7 +121,7 @@ export default function Home() {
             <motion.img
               key={isFirstVisit && heroIndex === 0 ? 'initial-hero' : heroIndex}
               src={kitchenImages[heroIndex]}
-              initial={{ opacity: 0, scale: 1.1 }}
+              initial={{ opacity: 0, scale: isFirstVisit && heroIndex === 0 ? 1 : 1.1 }}
               animate={{ opacity: 0.7, scale: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 4 }}
