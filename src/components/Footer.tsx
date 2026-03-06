@@ -60,12 +60,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto pt-10 border-t border-white/5 flex flex-col md:row items-center justify-between gap-4 text-zinc-600 text-xs font-mono uppercase tracking-widest">
+      <div className="max-w-7xl mx-auto pt-10 border-t border-white/5 flex flex-col md:row items-center justify-between gap-4 text-zinc-600 text-xs font-mono uppercase tracking-widest text-center md:text-left">
         <p>© 2026 RCS Remodeling. All Rights Reserved.</p>
-        <div className="flex gap-6">
-          <a href="#" className="hover:text-white">Privacy Policy</a>
-          <a href="#" className="hover:text-white">Terms of Service</a>
-        </div>
       </div>
     </footer>
   );
