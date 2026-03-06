@@ -7,6 +7,40 @@ import Carousel from '../components/Carousel';
 import { useState, useEffect } from 'react';
 import { AnimatePresence, useScroll, useSpring } from 'motion/react';
 
+const LaserBeam = ({ top, delay = 0, duration = 2, vertical = false }: { top?: string; delay?: number; duration?: number; vertical?: boolean }) => (
+  <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
+    <motion.div
+      initial={vertical ? { y: '-100%', opacity: 0 } : { x: '-100%', opacity: 0 }}
+      animate={vertical ? { y: '200%', opacity: [0, 1, 1, 0] } : { x: '200%', opacity: [0, 1, 1, 0] }}
+      transition={{
+        duration,
+        repeat: Infinity,
+        delay,
+        ease: "linear",
+      }}
+      style={vertical ? { left: top, width: '1px' } : { top, height: '1px' }}
+      className={`absolute ${vertical ? 'h-full bg-gradient-to-b' : 'w-full bg-gradient-to-r'} from-transparent via-accent to-transparent shadow-[0_0_15px_rgba(255,107,0,0.8)]`}
+    />
+  </div>
+);
+
+const LaserBorder = () => (
+  <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-[inherit]">
+    <motion.div
+      animate={{
+        rotate: [0, 360],
+      }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+      className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_0deg,transparent_170deg,var(--accent)_180deg,transparent_190deg,transparent_360deg)] opacity-30"
+      style={{ '--accent': '#FF6B00' } as any}
+    />
+  </div>
+);
+
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -99,6 +133,11 @@ export default function Home() {
 
       {/* H.I.T. Values Section */}
       <section className="py-32 px-6 bg-obsidian relative overflow-hidden">
+        <LaserBeam top="20%" delay={0} duration={3} />
+        <LaserBeam top="50%" delay={1} duration={2.5} />
+        <LaserBeam top="80%" delay={2} duration={4} />
+        <LaserBeam top="15%" delay={0.5} duration={5} vertical={true} />
+        <LaserBeam top="85%" delay={1.5} duration={4.5} vertical={true} />
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
@@ -123,6 +162,7 @@ export default function Home() {
 
       {/* Services Grid Preview */}
       <section className="py-32 px-6 bg-slate-dark relative">
+        <LaserBorder />
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
             <div className="max-w-2xl">
@@ -240,6 +280,10 @@ export default function Home() {
 
       {/* Latest Insights (Mini Blog) */}
       <section className="py-32 px-6 bg-obsidian relative">
+        <LaserBeam top="30%" delay={0} duration={3} />
+        <LaserBeam top="70%" delay={1.5} duration={3.5} />
+        <LaserBeam top="10%" delay={0.8} duration={4} vertical={true} />
+        <LaserBeam top="90%" delay={2.2} duration={5} vertical={true} />
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
             <div className="max-w-2xl">
@@ -291,6 +335,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-32 px-6 bg-slate-dark">
         <div className="max-w-5xl mx-auto glass-card p-12 md:p-20 text-center relative overflow-hidden">
+          <LaserBorder />
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent" />
           <h2 className="text-4xl md:text-6xl font-display font-black text-white mb-8">READY TO TRANSFORM?</h2>
           <p className="text-zinc-400 text-lg mb-12 max-w-xl mx-auto">
