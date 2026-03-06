@@ -21,7 +21,7 @@ export default function ServicesHub() {
             FULL-SPECTRUM <br />
             <span className="text-accent">PROPERTY MASTERY.</span>
           </h1>
-          <p className="text-zinc-400 text-lg md:text-xl leading-relaxed">
+          <p className="text-zinc-200 text-lg md:text-xl leading-relaxed">
             From the first sledgehammer swing to the final coat of premium paint, we handle every phase of your property's evolution.
           </p>
         </motion.div>
@@ -40,7 +40,7 @@ export default function ServicesHub() {
                 transition={{ delay: i * 0.1 }}
                 className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)]"
               >
-                <Link 
+                <Link
                   to={`/services/${service.slug}`}
                   className="group block glass-card p-10 h-full glow-border hover:bg-white/10 transition-all duration-500"
                 >
@@ -48,12 +48,12 @@ export default function ServicesHub() {
                     <Icon className="text-accent group-hover:text-white transition-colors" size={32} />
                   </div>
                   <h3 className="text-3xl font-display font-bold text-white mb-4">{service.title}</h3>
-                  <p className="text-zinc-500 mb-8 line-clamp-3 leading-relaxed">
+                  <p className="text-zinc-300 mb-8 line-clamp-3 leading-relaxed">
                     {service.description}
                   </p>
                   <ul className="space-y-3 mb-10">
                     {service.features.slice(0, 3).map((f) => (
-                      <li key={f} className="text-zinc-400 text-sm flex items-center gap-2">
+                      <li key={f} className="text-zinc-200 text-sm flex items-center gap-2">
                         <div className="w-1.5 h-1.5 rounded-full bg-accent" />
                         {f}
                       </li>
@@ -76,7 +76,7 @@ export default function ServicesHub() {
         <div className="max-w-7xl mx-auto flex flex-col md:row items-center justify-between gap-12">
           <div className="max-w-xl">
             <h2 className="text-4xl font-display font-bold text-white mb-6">Not sure what you need?</h2>
-            <p className="text-zinc-500">Our experts can walk through your property and provide a comprehensive assessment of remodeling, demo, and cleanup needs.</p>
+            <p className="text-zinc-300">Our experts can walk through your property and provide a comprehensive assessment of remodeling, demo, and cleanup needs.</p>
           </div>
           <Link to="/contact" className="btn-primary">
             Book an Assessment

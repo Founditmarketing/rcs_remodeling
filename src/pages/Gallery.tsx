@@ -23,7 +23,7 @@ export default function Gallery() {
             THE PROOF IS IN <br />
             <span className="text-accent">THE RESULTS.</span>
           </h1>
-          <p className="text-zinc-400 text-lg md:text-xl leading-relaxed">
+          <p className="text-zinc-200 text-lg md:text-xl leading-relaxed">
             Witness the transformation. From neglected spaces to high-end sanctuaries.
           </p>
         </motion.div>
@@ -37,8 +37,8 @@ export default function Gallery() {
               key={cat}
               onClick={() => setFilter(cat)}
               className={`px-6 py-2 rounded-full font-bold transition-all ${filter === cat
-                  ? 'bg-accent text-white shadow-[0_0_15px_rgba(242,125,38,0.4)]'
-                  : 'bg-white/5 text-zinc-500 hover:text-white hover:bg-white/10'
+                ? 'bg-accent text-white shadow-[0_0_15px_var(--color-accent-glow)]'
+                : 'bg-white/5 text-zinc-300 hover:text-white hover:bg-white/10'
                 }`}
             >
               {cat}
@@ -65,7 +65,7 @@ export default function Gallery() {
                   <img
                     src={item.imageAfter}
                     alt={item.category}
-                    className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-110 opacity-60"
+                    className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-110 opacity-80"
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-500">

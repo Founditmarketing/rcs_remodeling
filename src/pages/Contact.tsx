@@ -15,7 +15,7 @@ export default function Contact() {
             START YOUR <br />
             <span className="text-accent">TRANSFORMATION.</span>
           </h1>
-          <p className="text-zinc-400 text-lg md:text-xl leading-relaxed">
+          <p className="text-zinc-200 text-lg md:text-xl leading-relaxed">
             Ready for elite results? Fill out the form below or reach out directly to our Terrell headquarters.
           </p>
         </motion.div>
@@ -34,7 +34,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-white font-bold text-xl mb-1">Call Us</h4>
-                    <a href="tel:4692945888" className="text-zinc-400 text-lg hover:text-accent transition-colors">469-294-5888</a>
+                    <a href="tel:4692945888" className="text-zinc-200 text-lg hover:text-accent transition-colors">469-294-5888</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-6">
@@ -43,7 +43,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-white font-bold text-xl mb-1">Email Us</h4>
-                    <a href="mailto:info@rcsremodeling.com" className="text-zinc-400 text-lg hover:text-accent transition-colors">info@rcsremodeling.com</a>
+                    <a href="mailto:info@rcsremodeling.com" className="text-zinc-200 text-lg hover:text-accent transition-colors">info@rcsremodeling.com</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-6">
@@ -52,7 +52,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-white font-bold text-xl mb-1">Visit Us</h4>
-                    <p className="text-zinc-400 text-lg">12445 Amy Lane, Terrell, TX 75160</p>
+                    <p className="text-zinc-200 text-lg">12445 Amy Lane, Terrell, TX 75160</p>
                   </div>
                 </div>
               </div>
@@ -62,7 +62,7 @@ export default function Contact() {
               <h4 className="text-white font-bold flex items-center gap-2">
                 <Clock className="text-accent" size={20} /> Business Hours
               </h4>
-              <div className="space-y-2 text-sm text-zinc-500 font-mono uppercase">
+              <div className="space-y-2 text-sm text-zinc-300 font-mono uppercase">
                 <div className="flex justify-between"><span>Mon - Fri</span> <span>8:00 AM - 6:00 PM</span></div>
                 <div className="flex justify-between"><span>Saturday</span> <span>9:00 AM - 2:00 PM</span></div>
                 <div className="flex justify-between"><span>Sunday</span> <span className="text-accent">Closed</span></div>
@@ -70,7 +70,7 @@ export default function Contact() {
             </div>
 
             {/* Google Maps Embed */}
-            <div className="h-80 rounded-3xl overflow-hidden relative border-2 border-accent group/map shadow-[0_0_30px_rgba(255,107,0,0.15)]">
+            <div className="h-80 rounded-3xl overflow-hidden relative border-2 border-accent group/map shadow-[0_0_30px_var(--color-accent-glow)]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4405.6135165783335!2d-96.1319602!3d32.72171660000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8649436b4f02733b%3A0xdf878be55438e8f1!2s12445%20Amy%20Ln%2C%20Terrell%2C%20TX%2075161!5e1!3m2!1sen!2sus!4v1772815894715!5m2!1sen!2sus"
                 width="100%"
@@ -79,7 +79,7 @@ export default function Contact() {
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="opacity-70 group-hover:opacity-100 transition-opacity duration-700"
+                className="opacity-80 group-hover:opacity-100 transition-opacity duration-700"
               ></iframe>
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function Contact() {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-xs font-mono uppercase tracking-widest text-zinc-500">Full Name</label>
+                  <label className="text-xs font-mono uppercase tracking-widest text-zinc-300">Full Name</label>
                   <input
                     type="text"
                     name="name"
@@ -107,7 +107,7 @@ export default function Contact() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-mono uppercase tracking-widest text-zinc-500">Phone Number</label>
+                  <label className="text-xs font-mono uppercase tracking-widest text-zinc-300">Phone Number</label>
                   <input
                     type="tel"
                     name="phone"
@@ -118,7 +118,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-mono uppercase tracking-widest text-zinc-500">Email Address</label>
+                <label className="text-xs font-mono uppercase tracking-widest text-zinc-300">Email Address</label>
                 <input
                   type="email"
                   name="email"
@@ -128,7 +128,7 @@ export default function Contact() {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-mono uppercase tracking-widest text-zinc-500">Service Needed</label>
+                <label className="text-xs font-mono uppercase tracking-widest text-zinc-300">Service Needed</label>
                 <select name="service" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all appearance-none">
                   <option className="bg-obsidian">Remodeling</option>
                   <option className="bg-obsidian">Demolition</option>
@@ -138,7 +138,7 @@ export default function Contact() {
                 </select>
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-mono uppercase tracking-widest text-zinc-500">Project Details</label>
+                <label className="text-xs font-mono uppercase tracking-widest text-zinc-300">Project Details</label>
                 <textarea
                   name="message"
                   rows={5}

@@ -16,7 +16,7 @@ export default function Reviews() {
             WHAT THE DFW <br />
             <span className="text-accent">IS SAYING.</span>
           </h1>
-          <p className="text-zinc-400 text-lg md:text-xl leading-relaxed">
+          <p className="text-zinc-200 text-lg md:text-xl leading-relaxed">
             Real stories from homeowners in Dallas, Terrell, Forney, and beyond.
           </p>
         </motion.div>
@@ -45,7 +45,7 @@ export default function Reviews() {
               <div className="flex items-center justify-between pt-8 border-t border-white/5">
                 <div>
                   <h4 className="text-white font-bold text-xl">{review.name}</h4>
-                  <div className="flex items-center gap-2 text-zinc-500 text-sm mt-1">
+                  <div className="flex items-center gap-2 text-zinc-300 text-sm mt-1">
                     <MapPin size={14} className="text-accent" />
                     {review.location}
                   </div>
@@ -63,7 +63,7 @@ export default function Reviews() {
       <section className="py-32 px-6 bg-slate-dark mt-20">
         <div className="max-w-4xl mx-auto glass-card p-12 text-center">
           <h2 className="text-3xl font-display font-bold text-white mb-6">Are you a happy client?</h2>
-          <p className="text-zinc-500 mb-10">We'd love to hear about your experience with RCS Remodeling.</p>
+          <p className="text-zinc-300 mb-10">We'd love to hear about your experience with RCS Remodeling.</p>
           <button className="btn-outline">Leave a Review</button>
         </div>
       </section>

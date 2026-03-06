@@ -16,7 +16,7 @@ export default function About() {
             DEEP ROOTS. <br />
             <span className="text-accent">ELITE STANDARDS.</span>
           </h1>
-          <p className="text-zinc-400 text-lg md:text-xl leading-relaxed">
+          <p className="text-zinc-200 text-lg md:text-xl leading-relaxed">
             Based in Terrell, TX, and serving the entire DFW metroplex, RCS Remodeling was founded on a simple principle: doing the job right the first time, every time.
           </p>
         </motion.div>
@@ -39,7 +39,7 @@ export default function About() {
           </div>
           <div>
             <h2 className="text-4xl font-display font-bold text-white mb-8">WHO WE ARE</h2>
-            <div className="space-y-6 text-zinc-400 leading-relaxed">
+            <div className="space-y-6 text-zinc-200 leading-relaxed">
               <p>
                 RCS Remodeling is a premier, family-owned construction and restoration firm rooted in Terrell, Texas. We specialize in transforming residential and commercial properties across the Dallas-Fort Worth metroplex through high-precision remodeling, surgical demolition, and comprehensive site recovery. Our journey began with a single truck and a commitment to radical honesty, and today we stand as the region's most trusted partner for complex property projects.
               </p>
@@ -71,7 +71,7 @@ export default function About() {
                     </div>
                     <div>
                       <h4 className="text-white font-bold text-lg mb-2">{item.title}</h4>
-                      <p className="text-zinc-500 text-sm leading-relaxed">{item.desc}</p>
+                      <p className="text-zinc-300 text-sm leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -102,13 +102,13 @@ export default function About() {
             ].map((item, i) => (
               <div key={item.year} className="flex gap-8 relative">
                 <div className="flex flex-col items-center">
-                  <div className="w-4 h-4 rounded-full bg-accent shadow-[0_0_10px_rgba(242,125,38,0.5)]" />
+                  <div className="w-4 h-4 rounded-full bg-accent shadow-[0_0_10px_var(--color-accent-glow)]" />
                   {i !== 3 && <div className="w-px h-full bg-white/10 mt-2" />}
                 </div>
                 <div className="pb-12">
                   <span className="text-accent font-mono font-bold text-xl">{item.year}</span>
                   <h3 className="text-2xl font-display font-bold text-white mt-2">{item.title}</h3>
-                  <p className="text-zinc-500 mt-2">{item.desc}</p>
+                  <p className="text-zinc-300 mt-2">{item.desc}</p>
                 </div>
               </div>
             ))}

@@ -19,24 +19,7 @@ const LaserBeam = ({ top, delay = 0, duration = 2, vertical = false }: { top?: s
         ease: "linear",
       }}
       style={vertical ? { left: top, width: '1px' } : { top, height: '1px' }}
-      className={`absolute ${vertical ? 'h-full bg-gradient-to-b' : 'w-full bg-gradient-to-r'} from-transparent via-accent to-transparent shadow-[0_0_15px_rgba(255,107,0,0.8)]`}
-    />
-  </div>
-);
-
-const LaserBorder = () => (
-  <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-[inherit]">
-    <motion.div
-      animate={{
-        rotate: [0, 360],
-      }}
-      transition={{
-        duration: 4,
-        repeat: Infinity,
-        ease: "linear",
-      }}
-      className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_0deg,transparent_170deg,var(--accent)_180deg,transparent_190deg,transparent_360deg)] opacity-30"
-      style={{ '--accent': '#FF6B00' } as any}
+      className={`absolute ${vertical ? 'h-full bg-gradient-to-b' : 'w-full bg-gradient-to-r'} from-transparent via-accent to-transparent shadow-[0_0_15px_var(--color-accent-glow)]`}
     />
   </div>
 );
@@ -83,13 +66,13 @@ export default function Home() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden px-6">
         {/* Cinematic Background Slider */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-obsidian/60 z-10" />
+          <div className="absolute inset-0 bg-obsidian/30 z-10" />
           <AnimatePresence mode="wait">
             <motion.img
               key={heroIndex}
               src={kitchenImages[heroIndex]}
               initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 0.4, scale: 1 }}
+              animate={{ opacity: 0.7, scale: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 4 }}
               className="absolute inset-0 w-full h-full object-cover"
@@ -107,7 +90,7 @@ export default function Home() {
               WE BUILD <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-400">LEGACIES.</span>
             </h1>
-            <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
+            <p className="text-zinc-200 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
               Premium remodeling, demolition, and cleanup services for those who demand perfection. No jargon. No shortcuts. Just elite results.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -153,7 +136,7 @@ export default function Home() {
                   <value.icon className="text-accent group-hover:text-white transition-colors" size={32} />
                 </div>
                 <h3 className="text-3xl font-display font-bold text-white mb-4">{value.title}</h3>
-                <p className="text-zinc-500 leading-relaxed">{value.desc}</p>
+                <p className="text-zinc-300 leading-relaxed">{value.desc}</p>
               </div>
             ))}
           </div>
@@ -162,7 +145,6 @@ export default function Home() {
 
       {/* Services Grid Preview */}
       <section className="py-32 px-6 bg-slate-dark relative">
-        <LaserBorder />
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
             <div className="max-w-2xl">
@@ -190,12 +172,12 @@ export default function Home() {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-50"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent p-10 flex flex-col justify-end">
+                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-obsidian/20 to-transparent p-10 flex flex-col justify-end">
                     <h3 className="text-3xl font-display font-bold text-white mb-4">{service.title}</h3>
-                    <p className="text-zinc-400 text-sm mb-6 line-clamp-2">{service.description}</p>
+                    <p className="text-zinc-200 text-sm mb-6 line-clamp-2">{service.description}</p>
                     <span className="text-accent font-bold text-sm uppercase tracking-widest border-b border-accent/0 group-hover:border-accent/100 transition-all inline-block w-fit">
                       View Details
                     </span>
@@ -232,7 +214,7 @@ export default function Home() {
                   <img
                     src={item.imageAfter}
                     alt={item.category}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80"
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent p-8 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -335,10 +317,9 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-32 px-6 bg-slate-dark">
         <div className="max-w-5xl mx-auto glass-card p-12 md:p-20 text-center relative overflow-hidden">
-          <LaserBorder />
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent" />
           <h2 className="text-4xl md:text-6xl font-display font-black text-white mb-8">READY TO TRANSFORM?</h2>
-          <p className="text-zinc-400 text-lg mb-12 max-w-xl mx-auto">
+          <p className="text-zinc-200 text-lg mb-12 max-w-xl mx-auto">
             Don't settle for average. Get the premium DFW remodeling experience you deserve.
           </p>
           <Link to="/contact" className="btn-primary inline-block">
