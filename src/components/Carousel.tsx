@@ -46,7 +46,7 @@ export default function Carousel({
     }, [autoPlay, interval, nextSlide]);
 
     return (
-        <div className="relative group overflow-hidden py-10">
+        <div className="relative group py-10 px-4 md:px-0">
             <div className="flex justify-center">
                 <div className="relative w-full overflow-hidden">
                     <AnimatePresence initial={false} custom={direction} mode="wait">
@@ -90,13 +90,13 @@ export default function Carousel({
                 <>
                     <button
                         onClick={prevSlide}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-obsidian/50 border border-white/10 flex items-center justify-center text-white hover:bg-accent transition-colors md:-left-6"
+                        className="absolute left-2 md:-left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-obsidian-light/80 border border-white/10 flex items-center justify-center text-white hover:bg-accent transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-xl"
                     >
                         <ChevronLeft size={24} />
                     </button>
                     <button
                         onClick={nextSlide}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-obsidian/50 border border-white/10 flex items-center justify-center text-white hover:bg-accent transition-colors md:-right-6"
+                        className="absolute right-2 md:-right-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-obsidian-light/80 border border-white/10 flex items-center justify-center text-white hover:bg-accent transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-xl"
                     >
                         <ChevronRight size={24} />
                     </button>
