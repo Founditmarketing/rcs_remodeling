@@ -25,6 +25,7 @@ export default function Navbar() {
     { name: 'Reviews', path: '/reviews' },
     { name: 'Blog', path: '/blog' },
     { name: 'Contact', path: '/contact' },
+    { name: 'Color Explorer', path: '/color' },
   ];
 
   return (
