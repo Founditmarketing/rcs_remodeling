@@ -140,19 +140,19 @@ export default function Home() {
                 maskPosition: showRealImage ? '100% 100%' : '0% 0%'
               }}
               transition={{
-                opacity: { duration: 3, times: [0, 0.7, 1], ease: "linear" },
-                WebkitMaskPosition: { duration: 2.5, ease: "easeInOut", delay: 1.5 },
-                maskPosition: { duration: 2.5, ease: "easeInOut", delay: 1.5 }
+                opacity: { duration: 3.5, times: [0, 0.8, 1], ease: "linear" },
+                WebkitMaskPosition: { duration: 3, ease: [0.645, 0.045, 0.355, 1], delay: 1.5 },
+                maskPosition: { duration: 3, ease: [0.645, 0.045, 0.355, 1], delay: 1.5 }
               }}
               className="absolute inset-0 z-20 pointer-events-none"
               style={{
                 backgroundImage: 'url(/Blueprint.png)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                WebkitMaskImage: 'linear-gradient(135deg, black 33%, transparent 66%)',
-                maskImage: 'linear-gradient(135deg, black 33%, transparent 66%)',
-                WebkitMaskSize: '400% 400%',
-                maskSize: '400% 400%',
+                WebkitMaskImage: 'linear-gradient(135deg, black 45%, transparent 55%)',
+                maskImage: 'linear-gradient(135deg, black 45%, transparent 55%)',
+                WebkitMaskSize: '300% 300%',
+                maskSize: '300% 300%',
               }}
             />
           )}
