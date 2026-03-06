@@ -70,7 +70,7 @@ export default function Contact() {
             </div>
 
             {/* Google Maps Embed */}
-            <div className="h-80 rounded-3xl overflow-hidden relative border border-white/10 group/map">
+            <div className="h-80 rounded-3xl overflow-hidden relative border-2 border-accent group/map shadow-[0_0_30px_rgba(255,107,0,0.15)]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4405.6135165783335!2d-96.1319602!3d32.72171660000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8649436b4f02733b%3A0xdf878be55438e8f1!2s12445%20Amy%20Ln%2C%20Terrell%2C%20TX%2075161!5e1!3m2!1sen!2sus!4v1772815894715!5m2!1sen!2sus"
                 width="100%"

@@ -5,9 +5,33 @@ import { Link } from 'react-router-dom';
 import { SERVICES, REVIEWS, GALLERY_ITEMS, BLOG_POSTS } from '../constants';
 import Carousel from '../components/Carousel';
 import { useState, useEffect } from 'react';
-import { AnimatePresence } from 'motion/react';
+import { AnimatePresence, useScroll, useSpring } from 'motion/react';
+
+const FloatingOrb = ({ className, delay = 0 }: { className: string; delay?: number }) => (
+  <motion.div
+    animate={{
+      y: [0, -20, 0],
+      x: [0, 10, 0],
+      scale: [1, 1.1, 1],
+    }}
+    transition={{
+      duration: 10 + Math.random() * 5,
+      repeat: Infinity,
+      delay,
+      ease: "easeInOut",
+    }}
+    className={`absolute rounded-full blur-[100px] pointer-events-none ${className}`}
+  />
+);
 
 export default function Home() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   const kitchenImages = [
     '/page-images/kitchen-1.jpg',
     '/page-images/kitchen-4.jpg',
@@ -27,6 +51,19 @@ export default function Home() {
 
   return (
     <div className="relative">
+      {/* Scroll Progress Bar */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-accent z-[100] origin-left"
+        style={{ scaleX }}
+      />
+
+      {/* Background Ambience */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <FloatingOrb className="top-1/4 -left-20 w-96 h-96 bg-accent/10" />
+        <FloatingOrb className="bottom-1/4 -right-20 w-[500px] h-[500px] bg-accent/5" delay={2} />
+        <FloatingOrb className="top-3/4 left-1/2 w-80 h-80 bg-orange-500/5" delay={4} />
+      </div>
+
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden px-6">
         {/* Cinematic Background Slider */}
