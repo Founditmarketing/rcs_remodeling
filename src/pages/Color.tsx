@@ -4,16 +4,16 @@ import { ArrowRight, Star, Shield, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const SCHEMES = [
-    { name: 'ORANGE (ORIGINAL)', color: '#f27d26', glow: 'rgba(242, 125, 38, 0.4)' },
-    { name: 'ROYAL BLUE', color: '#2563EB', glow: 'rgba(37, 99, 235, 0.4)' },
-    { name: 'EMERALD', color: '#10B981', glow: 'rgba(16, 185, 129, 0.4)' },
-    { name: 'CRIMSON', color: '#DC2626', glow: 'rgba(220, 38, 38, 0.4)' },
-    { name: 'AMETHYST', color: '#8B5CF6', glow: 'rgba(139, 92, 246, 0.4)' },
-    { name: 'GOLD', color: '#FBBF24', glow: 'rgba(251, 191, 36, 0.4)' },
-    { name: 'TURQUOISE', color: '#06B6D4', glow: 'rgba(6, 182, 212, 0.4)' },
-    { name: 'RUBY', color: '#E11D48', glow: 'rgba(225, 29, 72, 0.4)' },
-    { name: 'LIME', color: '#84CC16', glow: 'rgba(132, 204, 22, 0.4)' },
-    { name: 'ROSE', color: '#F43F5E', glow: 'rgba(244, 63, 94, 0.4)' },
+    { name: 'MIDNIGHT & AMBER (ORIGINAL)', base: '#050505', color: '#f27d26', glow: 'rgba(242, 125, 38, 0.4)' },
+    { name: 'CHARCOAL & ELECTRIC', base: '#121212', color: '#2563EB', glow: 'rgba(37, 99, 235, 0.4)' },
+    { name: 'SLATE & TEAL', base: '#1e293b', color: '#0d9488', glow: 'rgba(13, 148, 136, 0.4)' },
+    { name: 'DEEP FOREST & COPPER', base: '#061a15', color: '#b87333', glow: 'rgba(184, 115, 51, 0.4)' },
+    { name: 'ESPRESSO & GOLD', base: '#1a120b', color: '#d4af37', glow: 'rgba(212, 175, 55, 0.4)' },
+    { name: 'GRAPHITE & CRIMSON', base: '#1c1c1c', color: '#9a031e', glow: 'rgba(154, 3, 30, 0.4)' },
+    { name: 'NAVY & SILVER', base: '#0a1128', color: '#c0c0c0', glow: 'rgba(192, 192, 192, 0.4)' },
+    { name: 'VOID & NEON', base: '#000000', color: '#39ff14', glow: 'rgba(57, 255, 20, 0.4)' },
+    { name: 'BASALT & AZURE', base: '#262626', color: '#007fff', glow: 'rgba(0, 127, 255, 0.4)' },
+    { name: 'BORDEAUX & PLATINUM', base: '#2d0320', color: '#e5e4e2', glow: 'rgba(229, 228, 226, 0.4)' },
 ];
 
 const LaserBeam = ({ top, delay = 0, duration = 2, vertical = false, color }: { top?: string; delay?: number; duration?: number; vertical?: boolean; color: string }) => (
@@ -35,11 +35,12 @@ const LaserBeam = ({ top, delay = 0, duration = 2, vertical = false, color }: { 
 
 interface ShowcaseProps {
     name: string;
+    base: string;
     color: string;
     glow: string;
 }
 
-const ShowcaseSection = ({ name, color, glow }: ShowcaseProps) => {
+const ShowcaseSection = ({ name, base, color, glow }: ShowcaseProps) => {
     const [heroIndex, setHeroIndex] = useState(0);
     const kitchenImages = [
         '/page-images/kitchen-1.jpg',
@@ -57,11 +58,11 @@ const ShowcaseSection = ({ name, color, glow }: ShowcaseProps) => {
     }, [kitchenImages.length]);
 
     return (
-        <div className="relative border-b-8 border-white/10" style={{ '--color-accent': color, '--color-accent-glow': glow, '--accent': color } as any}>
+        <div className="relative border-b-8 border-white/10" style={{ '--color-accent': color, '--color-accent-glow': glow, '--accent': color, backgroundColor: base } as any}>
             {/* Hero Section */}
             <section className="relative h-screen flex items-center justify-center overflow-hidden px-6">
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-obsidian/60 z-10" />
+                    <div className="absolute inset-0 bg-black/60 z-10" />
                     <AnimatePresence mode="wait">
                         <motion.img
                             key={heroIndex}
@@ -87,7 +88,7 @@ const ShowcaseSection = ({ name, color, glow }: ShowcaseProps) => {
                                 {name}.
                             </span>
                         </h1>
-                        <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
+                        <p className="text-zinc-200 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
                             Experience the elite {name} theme. Premium remodeling, demolition, and cleanup services for those who demand perfection.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -103,7 +104,7 @@ const ShowcaseSection = ({ name, color, glow }: ShowcaseProps) => {
             </section>
 
             {/* H.I.T. Values Section */}
-            <section className="py-32 px-6 bg-obsidian relative overflow-hidden">
+            <section className="py-32 px-6 relative overflow-hidden" style={{ backgroundColor: base }}>
                 <LaserBeam top="20%" delay={0} duration={3} color={color} />
                 <LaserBeam top="50%" delay={1} duration={2.5} color={color} />
                 <LaserBeam top="80%" delay={2} duration={4} color={color} />
@@ -125,7 +126,7 @@ const ShowcaseSection = ({ name, color, glow }: ShowcaseProps) => {
                                     <value.icon className="text-[var(--color-accent)] group-hover:text-white transition-colors" size={32} />
                                 </div>
                                 <h3 className="text-3xl font-display font-bold text-white mb-4">{value.title}</h3>
-                                <p className="text-zinc-500 leading-relaxed">{value.desc}</p>
+                                <p className="text-zinc-300 leading-relaxed font-medium">{value.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -138,14 +139,14 @@ const ShowcaseSection = ({ name, color, glow }: ShowcaseProps) => {
 export default function Color() {
     return (
         <div className="bg-obsidian min-h-screen">
-            <div className="py-20 text-center bg-black/50 border-b border-white/5">
+            <div className="py-20 text-center bg-black/80 border-b border-white/5 relative z-50">
                 <h1 className="text-4xl font-display font-black text-white">COLOR THEME EXPLORER</h1>
-                <p className="text-zinc-500 mt-4">Scroll down to see 10 different premium color schemes.</p>
+                <p className="text-zinc-500 mt-4">Scroll down to see 10 unique combinations of "Base" and "Main" colors.</p>
             </div>
             {SCHEMES.map((scheme) => (
-                <ShowcaseSection key={scheme.name} name={scheme.name} color={scheme.color} glow={scheme.glow} />
+                <ShowcaseSection key={scheme.name} {...scheme} />
             ))}
-            <div className="py-20 text-center bg-black/50 border-t border-white/5">
+            <div className="py-20 text-center bg-black border-t border-white/5">
                 <p className="text-zinc-600">End of Showcase</p>
             </div>
         </div>
