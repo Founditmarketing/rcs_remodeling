@@ -171,10 +171,9 @@ export default function Home() {
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group relative h-[400px] rounded-3xl overflow-hidden w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)]"
+                whileHover={{ y: -10, rotateX: 2, rotateY: 2 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="group relative h-[400px] rounded-3xl overflow-hidden w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] shadow-2xl"
               >
                 <Link to={`/services/${service.slug}`} className="block h-full w-full">
                   <img
@@ -214,8 +213,10 @@ export default function Home() {
 
           <Carousel
             items={GALLERY_ITEMS.slice(0, 8).map((item, i) => (
-              <div
+              <motion.div
                 key={item.id}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.5 }}
                 className="group relative h-[450px] rounded-3xl overflow-hidden glass-card"
               >
                 <Link to="/gallery" className="block h-full w-full">
@@ -229,7 +230,7 @@ export default function Home() {
                     <span className="text-accent font-mono text-xs uppercase mb-2">{item.category}</span>
                   </div>
                 </Link>
-              </div>
+              </motion.div>
             ))}
             interval={4000}
           />
@@ -248,9 +249,10 @@ export default function Home() {
 
           <Carousel
             items={REVIEWS.map((review, i) => (
-              <div
+              <motion.div
                 key={review.id}
-                className="glass-card p-8 h-full flex flex-col"
+                whileHover={{ y: -5, boxShadow: "0 0 30px rgba(255,107,0,0.1)" }}
+                className="glass-card p-8 h-full flex flex-col transition-shadow duration-300"
               >
                 <p className="text-zinc-300 italic mb-8 flex-grow">"{review.text}"</p>
                 <div className="flex items-center justify-between">
@@ -284,8 +286,9 @@ export default function Home() {
 
           <Carousel
             items={BLOG_POSTS.slice(0, 8).map((post, i) => (
-              <article
+              <motion.article
                 key={post.id}
+                whileHover={{ y: -10 }}
                 className="group flex flex-col h-[500px] glass-card overflow-hidden glow-border"
               >
                 <div className="relative h-48 overflow-hidden">
@@ -310,7 +313,7 @@ export default function Home() {
                     Read More <ArrowRight size={16} />
                   </Link>
                 </div>
-              </article>
+              </motion.article>
             ))}
             interval={6000}
           />
