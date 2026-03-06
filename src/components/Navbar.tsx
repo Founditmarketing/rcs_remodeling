@@ -37,7 +37,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
           <img
-            src="/logo.png"
+            src="/LOGOV.png"
             alt="RCS Remodeling"
             className="h-36 w-auto object-contain transition-transform group-hover:scale-105"
           />
