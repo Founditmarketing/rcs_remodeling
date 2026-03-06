@@ -56,7 +56,7 @@ export default function BlogPost() {
                 Many homeowners consider the DIY route to save a few dollars, but the hidden costs often outweigh the initial savings. Professional demolition, for instance, isn't just about swinging a hammer; it's about understanding load-bearing points, utility lines, and environmental hazards.
               </p>
               <img
-                src="/Blog%20Images/Blog%20Page%20pictures/Wall%20destruction.png"
+                src="/blog-images/wall-destruction.png"
                 alt="Process"
                 className="rounded-2xl w-full my-12"
                 referrerPolicy="no-referrer"
