@@ -9,9 +9,9 @@ export default function Footer() {
         <div className="col-span-1 md:col-span-1">
           <Link to="/" className="flex items-center gap-2 mb-6 group">
             <img
-              src="/LOGOV.png"
+              src="/logo.png"
               alt="RCS Remodeling"
-              className="h-30 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+              className="h-20 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity"
             />
           </Link>
           <p className="text-zinc-500 text-sm leading-relaxed mb-6">
