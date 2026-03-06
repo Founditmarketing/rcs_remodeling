@@ -57,20 +57,45 @@ export default function Home() {
   });
 
   const kitchenImages = [
-    '/page-images/kitchen-1.jpg',
     '/page-images/kitchen-4.jpg',
+    '/page-images/kitchen-1.jpg',
     '/page-images/kitchen-5.jpg',
-    '/page-images/untitled-design-14.png',
     '/page-images/untitled-design-108.png'
   ];
 
   const [heroIndex, setHeroIndex] = useState(0);
+  const [isFirstVisit, setIsFirstVisit] = useState(false);
+  const [showRealImage, setShowRealImage] = useState(false);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setHeroIndex((prev) => (prev + 1) % kitchenImages.length);
-    }, 10000);
-    return () => clearInterval(timer);
+    // Check if this is the first time visiting Home in this session
+    const hasVisited = sessionStorage.getItem('hasVisitedHome');
+    if (!hasVisited) {
+      setIsFirstVisit(true);
+      sessionStorage.setItem('hasVisitedHome', 'true');
+
+      // Sequence: Blueprint -> Real Image transition after 2s
+      const revealTimer = setTimeout(() => {
+        setShowRealImage(true);
+      }, 2000);
+
+      // Start carousel after 12s on first visit
+      const carouselTimer = setInterval(() => {
+        setHeroIndex((prev) => (prev + 1) % kitchenImages.length);
+      }, 12000);
+
+      return () => {
+        clearTimeout(revealTimer);
+        clearInterval(carouselTimer);
+      };
+    } else {
+      // Direct to real image if not first visit
+      setShowRealImage(true);
+      const timer = setInterval(() => {
+        setHeroIndex((prev) => (prev + 1) % kitchenImages.length);
+      }, 10000);
+      return () => clearInterval(timer);
+    }
   }, [kitchenImages.length]);
 
   return (
@@ -89,19 +114,32 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden px-6">
         {/* Cinematic Background Slider */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 text-white">
           <div className="absolute inset-0 bg-obsidian/30 z-10" />
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={heroIndex}
-              src={kitchenImages[heroIndex]}
-              initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 0.7, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 4 }}
-              className="absolute inset-0 w-full h-full object-cover"
-              referrerPolicy="no-referrer"
-            />
+          <AnimatePresence mode="sync">
+            {isFirstVisit && !showRealImage && (
+              <motion.img
+                key="blueprint"
+                src="/page-images/Blueprint0.5.png"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.8 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.5 }}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            )}
+            {showRealImage && (
+              <motion.img
+                key={isFirstVisit ? (heroIndex === 0 ? 'initial-hero' : heroIndex) : heroIndex}
+                src={kitchenImages[heroIndex]}
+                initial={{ opacity: 0, scale: 1.1 }}
+                animate={{ opacity: 0.7, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: isFirstVisit && heroIndex === 0 ? 3 : 4 }}
+                className="absolute inset-0 w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            )}
           </AnimatePresence>
         </div>
 
