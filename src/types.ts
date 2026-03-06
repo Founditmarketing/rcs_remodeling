@@ -23,6 +23,7 @@ export interface Service {
   slug: string;
   description: string;
   icon: string;
+  image: string;
   features: string[];
   process: { step: string; description: string }[];
   faqs: { question: string; answer: string }[];

@@ -7,6 +7,7 @@ export const SERVICES: Service[] = [
     slug: 'remodeling',
     description: 'Transforming DFW homes into modern masterpieces with precision craftsmanship and high-end finishes.',
     icon: 'Hammer',
+    image: '/page-images/kitchen-4.jpg',
     features: ['Kitchen & Bath Overhauls', 'Full Home Renovations', 'Structural Modifications', 'Custom Cabinetry'],
     process: [
       { step: 'Consultation', description: 'We meet at your property to discuss your vision, budget, and timeline.' },
@@ -25,6 +26,7 @@ export const SERVICES: Service[] = [
     slug: 'debris-removal',
     description: 'Professional, efficient removal of construction waste, storm damage, and unwanted clutter.',
     icon: 'Truck',
+    image: '/page-images/rcs-debris-18-13-3.png',
     features: ['Construction Waste', 'Storm Cleanup', 'Estate Clear-outs', 'Appliance Disposal'],
     process: [
       { step: 'Assessment', description: 'We estimate the volume and type of debris to be removed.' },
@@ -41,6 +43,7 @@ export const SERVICES: Service[] = [
     slug: 'demolition',
     description: 'Safe, controlled demolition services for residential and commercial structures.',
     icon: 'Bomb',
+    image: '/page-images/rcs-demo-hammer.png',
     features: ['Interior Gutting', 'Shed & Garage Removal', 'Pool In-fills', 'Partial Demolition'],
     process: [
       { step: 'Safety Prep', description: 'Utility shut-offs and site securing.' },
@@ -57,6 +60,7 @@ export const SERVICES: Service[] = [
     slug: 'cleanup',
     description: 'Deep cleaning and restoration services for post-construction or neglected properties.',
     icon: 'Sparkles',
+    image: '/page-images/clean-up-1.jpg',
     features: ['Post-Construction Clean', 'Hoarder House Restoration', 'Deep Sanitization', 'Exterior Power Washing'],
     process: [
       { step: 'Initial Scrape', description: 'Removal of large debris and dust.' },
@@ -73,6 +77,7 @@ export const SERVICES: Service[] = [
     slug: 'squatter-removal',
     description: 'Comprehensive property recovery services including cleanup, securing, and restoration after unauthorized occupancy.',
     icon: 'ShieldAlert',
+    image: '/page-images/debris-6.jpg',
     features: ['Hazardous Waste Removal', 'Lock Replacement', 'Property Board-up', 'Damage Assessment'],
     process: [
       { step: 'Secure Site', description: 'Ensuring the property is legally vacant and secured.' },
@@ -472,140 +477,98 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: '1',
     title: 'Modern Kitchen Overhaul',
     category: 'Remodeling',
-    imageBefore: 'https://picsum.photos/seed/k-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/k-after/800/600'
+    imageBefore: '/page-images/kitchen-1.jpg',
+    imageAfter: '/page-images/kitchen-4.jpg'
   },
   {
     id: '2',
     title: 'Full House Gut',
     category: 'Demolition',
-    imageBefore: 'https://picsum.photos/seed/d-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/d-after/800/600'
+    imageBefore: '/page-images/rcs-demo-hammer.png',
+    imageAfter: '/page-images/kitchen-5.jpg'
   },
   {
     id: '3',
     title: 'Hoarder House Recovery',
     category: 'Cleanup',
-    imageBefore: 'https://picsum.photos/seed/c-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/c-after/800/600'
+    imageBefore: '/page-images/clean-up-1.jpg',
+    imageAfter: '/page-images/clean-up-3.jpg'
   },
   {
     id: '4',
     title: 'Luxury Master Bath',
     category: 'Remodeling',
-    imageBefore: 'https://picsum.photos/seed/b-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/b-after/800/600'
+    imageBefore: '/page-images/rcs-bath-claw.jpg',
+    imageAfter: '/page-images/untitled-design-14.png'
   },
   {
     id: '5',
     title: 'Commercial Debris Clear',
     category: 'Debris Removal',
-    imageBefore: 'https://picsum.photos/seed/dr-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/dr-after/800/600'
+    imageBefore: '/page-images/rcs-debris-1-1800x1350.png',
+    imageAfter: '/page-images/rcs-debris-18-13-3.png'
   },
   {
     id: '6',
     title: 'Structural Demolition',
     category: 'Demolition',
-    imageBefore: 'https://picsum.photos/seed/sd-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/sd-after/800/600'
+    imageBefore: '/page-images/rcs-demo-hammer.png',
+    imageAfter: '/page-images/untitled-design-110.png'
   },
   {
     id: '7',
     title: 'Post-Storm Cleanup',
     category: 'Cleanup',
-    imageBefore: 'https://picsum.photos/seed/ps-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/ps-after/800/600'
+    imageBefore: '/page-images/debris-5.jpg',
+    imageAfter: '/page-images/debris-6.jpg'
   },
   {
     id: '8',
     title: 'Squatter Site Recovery',
     category: 'Squatter Removal',
-    imageBefore: 'https://picsum.photos/seed/sq-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/sq-after/800/600'
+    imageBefore: '/page-images/debris-6.jpg',
+    imageAfter: '/page-images/untitled-design-111-1.png'
   },
   {
     id: '9',
     title: 'Open Concept Living',
     category: 'Remodeling',
-    imageBefore: 'https://picsum.photos/seed/oc-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/oc-after/800/600'
+    imageBefore: '/page-images/kitchen-3.webp',
+    imageAfter: '/page-images/untitled-design-108.png'
   },
   {
     id: '10',
     title: 'Garage Demolition',
     category: 'Demolition',
-    imageBefore: 'https://picsum.photos/seed/gd-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/gd-after/800/600'
+    imageBefore: '/page-images/rcs-demo-hammer.png',
+    imageAfter: '/page-images/untitled-design-114.png'
   },
   {
     id: '11',
     title: 'Estate Debris Removal',
     category: 'Debris Removal',
-    imageBefore: 'https://picsum.photos/seed/ed-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/ed-after/800/600'
+    imageBefore: '/page-images/rcs-debris-1-1800x1350.png',
+    imageAfter: '/page-images/untitled-design-118.png'
   },
   {
     id: '12',
     title: 'Basement Restoration',
     category: 'Remodeling',
-    imageBefore: 'https://picsum.photos/seed/br-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/br-after/800/600'
+    imageBefore: '/page-images/drill-hammer-1.jpg',
+    imageAfter: '/page-images/untitled-design-8.png'
   },
   {
     id: '13',
     title: 'Industrial Cleanup',
     category: 'Cleanup',
-    imageBefore: 'https://picsum.photos/seed/ic-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/ic-after/800/600'
+    imageBefore: '/page-images/clean-up-1.jpg',
+    imageAfter: '/page-images/untitled-design-110-1.png'
   },
   {
     id: '14',
     title: 'Pool House Remodel',
     category: 'Remodeling',
-    imageBefore: 'https://picsum.photos/seed/ph-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/ph-after/800/600'
-  },
-  {
-    id: '15',
-    title: 'Interior Strip-out',
-    category: 'Demolition',
-    imageBefore: 'https://picsum.photos/seed/is-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/is-after/800/600'
-  },
-  {
-    id: '16',
-    title: 'Site Preparation',
-    category: 'Debris Removal',
-    imageBefore: 'https://picsum.photos/seed/sp-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/sp-after/800/600'
-  },
-  {
-    id: '17',
-    title: 'Attic Conversion',
-    category: 'Remodeling',
-    imageBefore: 'https://picsum.photos/seed/ac-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/ac-after/800/600'
-  },
-  {
-    id: '18',
-    title: 'Hazardous Waste Clear',
-    category: 'Cleanup',
-    imageBefore: 'https://picsum.photos/seed/hw-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/hw-after/800/600'
-  },
-  {
-    id: '19',
-    title: 'Deck Reconstruction',
-    category: 'Remodeling',
-    imageBefore: 'https://picsum.photos/seed/dr-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/dr-after/800/600'
-  },
-  {
-    id: '20',
-    title: 'Property Board-up',
-    category: 'Squatter Removal',
-    imageBefore: 'https://picsum.photos/seed/pb-before/800/600',
-    imageAfter: 'https://picsum.photos/seed/pb-after/800/600'
+    imageBefore: '/page-images/kitchen-1.jpg',
+    imageAfter: '/page-images/untitled-design-10.png'
   }
 ];

@@ -16,15 +16,15 @@ export default function ServiceDetail() {
       {/* Hero */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src={`https://picsum.photos/seed/${service.id}/1920/1080?grayscale`} 
-            alt={service.title} 
+          <img
+            src={service.image}
+            alt={service.title}
             className="w-full h-full object-cover opacity-20"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-obsidian via-transparent to-obsidian" />
         </div>
-        
+
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -81,7 +81,7 @@ export default function ServiceDetail() {
           <div className="space-y-4">
             {service.faqs.map((faq, i) => (
               <div key={i} className="glass-card overflow-hidden">
-                <button 
+                <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full p-6 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
                 >

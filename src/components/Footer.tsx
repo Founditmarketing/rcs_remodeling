@@ -7,11 +7,12 @@ export default function Footer() {
     <footer className="bg-slate-dark border-t border-white/5 pt-20 pb-10 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
         <div className="col-span-1 md:col-span-1">
-          <Link to="/" className="flex items-center gap-2 mb-6">
-            <div className="w-8 h-8 bg-accent rounded flex items-center justify-center">
-              <Hammer className="text-white w-5 h-5" />
-            </div>
-            <span className="text-xl font-display font-black tracking-tighter text-white">RCS</span>
+          <Link to="/" className="flex items-center gap-2 mb-6 group">
+            <img
+              src="/LOGO.png"
+              alt="RCS Remodeling"
+              className="h-10 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+            />
           </Link>
           <p className="text-zinc-500 text-sm leading-relaxed mb-6">
             Premium remodeling, demolition, and cleanup services in the Dallas-Fort Worth area. Built on the foundation of Honesty, Integrity, and Transparency.

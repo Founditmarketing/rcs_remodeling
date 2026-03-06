@@ -12,9 +12,9 @@ export default function Home() {
         {/* Cinematic Background Placeholder */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-obsidian/60 z-10" />
-          <img 
-            src="https://picsum.photos/seed/remodel-hero/1920/1080?grayscale" 
-            alt="Hero Background" 
+          <img
+            src="/page-images/untitled-design-108.png"
+            alt="Elite DFW Remodeling"
             className="w-full h-full object-cover opacity-40"
             referrerPolicy="no-referrer"
           />
@@ -51,7 +51,7 @@ export default function Home() {
         </div>
 
         {/* Scroll Indicator */}
-        <motion.div 
+        <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 text-zinc-500"
@@ -114,8 +114,8 @@ export default function Home() {
                 className="group relative h-[400px] rounded-3xl overflow-hidden w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)]"
               >
                 <Link to={`/services/${service.slug}`} className="block h-full w-full">
-                  <img 
-                    src={`https://picsum.photos/seed/${service.id}/800/1000`} 
+                  <img
+                    src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-50"
                     referrerPolicy="no-referrer"
@@ -160,9 +160,9 @@ export default function Home() {
                 className="group relative h-[450px] rounded-3xl overflow-hidden glass-card"
               >
                 <Link to="/gallery" className="block h-full w-full">
-                  <img 
-                    src={item.imageAfter} 
-                    alt={item.title} 
+                  <img
+                    src={item.imageAfter}
+                    alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60"
                     referrerPolicy="no-referrer"
                   />
@@ -243,9 +243,9 @@ export default function Home() {
                 className="group flex flex-col h-full glass-card overflow-hidden glow-border"
               >
                 <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={post.image} 
-                    alt={post.title} 
+                  <img
+                    src={post.image}
+                    alt={post.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     referrerPolicy="no-referrer"
                   />
@@ -257,8 +257,8 @@ export default function Home() {
                   <h3 className="text-xl font-display font-bold text-white mb-4 group-hover:text-accent transition-colors line-clamp-2">
                     {post.title}
                   </h3>
-                  <Link 
-                    to={`/blog/${post.id}`} 
+                  <Link
+                    to={`/blog/${post.id}`}
                     className="mt-auto flex items-center gap-2 text-accent font-bold text-sm group-hover:gap-4 transition-all"
                   >
                     Read More <ArrowRight size={16} />

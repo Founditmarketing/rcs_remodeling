@@ -36,20 +36,18 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(242,125,38,0.4)] group-hover:scale-110 transition-transform">
-            <Hammer className="text-white w-6 h-6" />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xl font-display font-black tracking-tighter text-white leading-none">RCS</span>
-            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-accent font-bold">Remodeling</span>
-          </div>
+          <img
+            src="/LOGO.png"
+            alt="RCS Remodeling"
+            className="h-12 w-auto object-contain transition-transform group-hover:scale-105"
+          />
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <div 
-              key={link.path} 
+            <div
+              key={link.path}
               className="relative group/nav"
               onMouseEnter={() => link.dropdown && setIsServicesOpen(true)}
               onMouseLeave={() => link.dropdown && setIsServicesOpen(false)}
@@ -134,7 +132,7 @@ export default function Navbar() {
                     {link.name}
                   </Link>
                   {link.dropdown && (
-                    <button 
+                    <button
                       onClick={(e) => {
                         e.preventDefault();
                         setIsServicesOpen(!isServicesOpen);
@@ -145,9 +143,9 @@ export default function Navbar() {
                     </button>
                   )}
                 </div>
-                
+
                 {link.dropdown && isServicesOpen && (
-                  <motion.div 
+                  <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     className="pl-4 flex flex-col gap-2 mt-2"

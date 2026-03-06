@@ -26,9 +26,9 @@ export default function About() {
       <section className="py-32 px-6 bg-slate-dark">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
-            <img 
-              src="https://picsum.photos/seed/terrell/800/1000" 
-              alt="Terrell TX Roots" 
+            <img
+              src="/page-images/rcs-room-add-1.jpg"
+              alt="Elite DFW Remodeling Roots"
               className="rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
               referrerPolicy="no-referrer"
             />
@@ -95,9 +95,9 @@ export default function About() {
               { name: 'Dave T.', role: 'Operations Chief', bio: 'Ensuring every demo and cleanup is executed with military precision.' }
             ].map((member) => (
               <div key={member.name} className="group relative h-[500px] rounded-3xl overflow-hidden glass-card">
-                <img 
-                  src={`https://picsum.photos/seed/${member.name}/600/800?grayscale`} 
-                  alt={member.name} 
+                <img
+                  src="/page-images/drill-hammer-1.jpg"
+                  alt={member.name}
                   className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
                   referrerPolicy="no-referrer"
                 />
