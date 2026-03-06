@@ -11,7 +11,7 @@ export default function Footer() {
             <img
               src="/logo.png"
               alt="RCS Remodeling"
-              className="h-20 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+              className="h-40 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity"
             />
           </Link>
           <p className="text-zinc-500 text-sm leading-relaxed mb-6">

@@ -39,7 +39,7 @@ export default function Navbar() {
           <img
             src="/logo.png"
             alt="RCS Remodeling"
-            className="h-20 w-auto object-contain transition-transform group-hover:scale-105"
+            className="h-40 w-auto object-contain transition-transform group-hover:scale-105"
           />
         </Link>
 
