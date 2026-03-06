@@ -20,7 +20,7 @@ export default function BlogPost() {
           <Link to="/blog" className="flex items-center gap-2 text-accent font-bold mb-12 hover:gap-4 transition-all">
             <ArrowLeft size={20} /> Back to Blog
           </Link>
-          
+
           <div className="flex items-center gap-6 text-zinc-500 text-sm font-mono uppercase mb-6">
             <span className="flex items-center gap-2"><Calendar size={16} className="text-accent" /> {post.date}</span>
             <span className="flex items-center gap-2"><User size={16} className="text-accent" /> {post.author}</span>
@@ -32,9 +32,9 @@ export default function BlogPost() {
           </h1>
 
           <div className="relative h-[500px] rounded-3xl overflow-hidden mb-16">
-            <img 
-              src={post.image} 
-              alt={post.title} 
+            <img
+              src={post.image}
+              alt={post.title}
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
@@ -44,7 +44,7 @@ export default function BlogPost() {
             <p className="text-white font-medium text-xl italic border-l-4 border-accent pl-6 py-2">
               {post.excerpt}
             </p>
-            
+
             {/* Full article content placeholder - in a real app this would be rich text */}
             <div className="space-y-6">
               <p>{post.content}</p>
@@ -55,9 +55,9 @@ export default function BlogPost() {
               <p>
                 Many homeowners consider the DIY route to save a few dollars, but the hidden costs often outweigh the initial savings. Professional demolition, for instance, isn't just about swinging a hammer; it's about understanding load-bearing points, utility lines, and environmental hazards.
               </p>
-              <img 
-                src="https://picsum.photos/seed/article-inner/1200/600" 
-                alt="Process" 
+              <img
+                src="/Blog%20Images/Blog%20Page%20pictures/Wall%20destruction.png"
+                alt="Process"
                 className="rounded-2xl w-full my-12"
                 referrerPolicy="no-referrer"
               />

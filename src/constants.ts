@@ -94,7 +94,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'March 1, 2026',
     author: 'RCS Team',
     category: 'Remodeling',
-    image: '/Blog Images/Blog Page pictures/Surviving a Full Kitchen Gut in DFW.png'
+    image: '/Blog%20Images/Blog%20Page%20pictures/Surviving%20a%20Full%20Kitchen%20Gut%20in%20DFW.png'
   },
   {
     id: '2',
@@ -104,7 +104,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Feb 25, 2026',
     author: 'RCS Team',
     category: 'Demolition',
-    image: '/Blog Images/Blog Page pictures/DIY Demolition costs.png'
+    image: '/Blog%20Images/Blog%20Page%20pictures/DIY%20Demolition%20costs.png'
   },
   {
     id: '3',
@@ -114,7 +114,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Feb 18, 2026',
     author: 'RCS Team',
     category: 'Cleanup',
-    image: '/Blog Images/Blog Page pictures/Hoarders.png'
+    image: '/Blog%20Images/Blog%20Page%20pictures/Hoarders.png'
   },
   {
     id: '4',
@@ -124,7 +124,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Feb 10, 2026',
     author: 'RCS Team',
     category: 'Design',
-    image: '/Blog Images/Blog Page pictures/Top 5 Remodeling Trends in Dallas for 2026.png'
+    image: '/Blog%20Images/Blog%20Page%20pictures/Top%205%20Remodeling%20Trends%20in%20Dallas%20for%202026.png'
   },
   {
     id: '5',
@@ -134,7 +134,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Feb 2, 2026',
     author: 'RCS Team',
     category: 'Security',
-    image: '/Blog Images/Blog Page pictures/Destroyed squatters home.png'
+    image: '/Blog%20Images/Blog%20Page%20pictures/Destroyed%20squatters%20home.png'
   },
   {
     id: '6',
@@ -144,7 +144,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Jan 25, 2026',
     author: 'RCS Team',
     category: 'Debris Removal',
-    image: '/Blog Images/Blog Page pictures/Storm damage.png'
+    image: '/Blog%20Images/Blog%20Page%20pictures/Storm%20damage.png'
   },
   {
     id: '7',
@@ -154,7 +154,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Jan 15, 2026',
     author: 'RCS Team',
     category: 'Real Estate',
-    image: '/Blog Images/Blog Page pictures/The ROI of a Master Suite Renovation.png'
+    image: '/Blog%20Images/Blog%20Page%20pictures/The%20ROI%20of%20a%20Master%20Suite%20Renovation.png'
   },
   {
     id: '8',
@@ -164,7 +164,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Jan 5, 2026',
     author: 'RCS Team',
     category: 'Sustainability',
-    image: '/Blog Images/Blog Page pictures/ECO fliendly.png'
+    image: '/Blog%20Images/Blog%20Page%20pictures/ECO%20fliendly.png'
   },
   {
     id: '9',
@@ -174,7 +174,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Dec 20, 2025',
     author: 'RCS Team',
     category: 'Remodeling',
-    image: '/Blog Images/Blog Page pictures/RCS Team Preparing Your Home for a Winter Remodel.png'
+    image: '/Blog%20Images/Blog%20Page%20pictures/RCS%20Team%20Preparing%20Your%20Home%20for%20a%20Winter%20Remodel.png'
   },
   {
     id: '10',
@@ -184,7 +184,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Dec 10, 2025',
     author: 'RCS Team',
     category: 'Company',
-    image: '/Blog Images/Blog Page pictures/The Importance of Transparency in Contracting.png'
+    image: '/Blog%20Images/Blog%20Page%20pictures/The%20Importance%20of%20Transparency%20in%20Contracting.png'
   }
 ];
 
