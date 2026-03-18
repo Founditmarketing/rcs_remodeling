@@ -491,31 +491,31 @@ export const REVIEWS: Review[] = [
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: '1',
-    category: 'Remodeling',
+    category: 'Demolition',
     imageBefore: '/page-images/kitchen-1.jpg',
     imageAfter: '/page-images/kitchen-4.jpg'
   },
   {
     id: '2',
-    category: 'Remodeling',
+    category: 'Demolition',
     imageBefore: '/page-images/rcs-demo-hammer.png',
     imageAfter: '/page-images/kitchen-5.jpg'
   },
   {
     id: '3',
-    category: 'Cleanup',
+    category: 'Demolition',
     imageBefore: '/page-images/clean-up-1.jpg',
     imageAfter: '/page-images/clean-up-3.jpg'
   },
   {
     id: '4',
-    category: 'Remodeling',
+    category: 'Demolition',
     imageBefore: '/page-images/rcs-bath-claw.jpg',
     imageAfter: '/page-images/untitled-design-14.png'
   },
   {
     id: '5',
-    category: 'Debris Removal',
+    category: 'Demolition',
     imageBefore: '/page-images/rcs-debris-1-1800x1350.png',
     imageAfter: '/page-images/rcs-debris-18-13-3.png'
   },
@@ -527,19 +527,19 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: '7',
-    category: 'Cleanup',
+    category: 'Demolition',
     imageBefore: '/page-images/debris-5.jpg',
     imageAfter: '/page-images/debris-6.jpg'
   },
   {
     id: '8',
-    category: 'Squatter Removal',
+    category: 'Demolition',
     imageBefore: '/page-images/debris-6.jpg',
     imageAfter: '/page-images/untitled-design-111-1.png'
   },
   {
     id: '9',
-    category: 'Remodeling',
+    category: 'Demolition',
     imageBefore: '/page-images/kitchen-3.webp',
     imageAfter: '/page-images/untitled-design-108.png'
   },
