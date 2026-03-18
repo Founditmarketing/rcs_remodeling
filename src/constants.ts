@@ -492,60 +492,60 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: '1',
     category: 'Demolition',
-    imageBefore: '/page-images/kitchen-1.jpg',
-    imageAfter: '/page-images/kitchen-4.jpg'
+    imageBefore: '/Demo/1.jpg',
+    imageAfter: '/Demo/1.jpg'
   },
   {
     id: '2',
     category: 'Demolition',
-    imageBefore: '/page-images/rcs-demo-hammer.png',
-    imageAfter: '/page-images/kitchen-5.jpg'
+    imageBefore: '/Demo/2.jpg',
+    imageAfter: '/Demo/2.jpg'
   },
   {
     id: '3',
     category: 'Demolition',
-    imageBefore: '/page-images/clean-up-1.jpg',
-    imageAfter: '/page-images/clean-up-3.jpg'
+    imageBefore: '/Demo/3.jpg',
+    imageAfter: '/Demo/3.jpg'
   },
   {
     id: '4',
     category: 'Demolition',
-    imageBefore: '/page-images/rcs-bath-claw.jpg',
-    imageAfter: '/page-images/untitled-design-14.png'
+    imageBefore: '/Demo/4.jpg',
+    imageAfter: '/Demo/4.jpg'
   },
   {
     id: '5',
     category: 'Demolition',
-    imageBefore: '/page-images/rcs-debris-1-1800x1350.png',
-    imageAfter: '/page-images/rcs-debris-18-13-3.png'
+    imageBefore: '/Demo/5.jpg',
+    imageAfter: '/Demo/5.jpg'
   },
   {
     id: '6',
     category: 'Demolition',
-    imageBefore: '/page-images/rcs-demo-hammer.png',
-    imageAfter: '/page-images/untitled-design-110.png'
+    imageBefore: '/Demo/6.jpg',
+    imageAfter: '/Demo/6.jpg'
   },
   {
     id: '7',
     category: 'Demolition',
-    imageBefore: '/page-images/debris-5.jpg',
-    imageAfter: '/page-images/debris-6.jpg'
+    imageBefore: '/Demo/7.jpg',
+    imageAfter: '/Demo/7.jpg'
   },
   {
     id: '8',
     category: 'Demolition',
-    imageBefore: '/page-images/debris-6.jpg',
-    imageAfter: '/page-images/untitled-design-111-1.png'
+    imageBefore: '/Demo/8.jpg',
+    imageAfter: '/Demo/8.jpg'
   },
   {
     id: '9',
     category: 'Demolition',
-    imageBefore: '/page-images/kitchen-3.webp',
-    imageAfter: '/page-images/untitled-design-108.png'
+    imageBefore: '/Demo/9.jpg',
+    imageAfter: '/Demo/9.jpg'
   },
   {
     id: '10',
-    category: 'Demolition',
+    category: 'Remodeling',
     imageBefore: '/page-images/rcs-demo-hammer.png',
     imageAfter: '/page-images/untitled-design-114.png'
   },
