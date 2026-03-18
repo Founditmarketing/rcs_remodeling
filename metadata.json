@@ -1,0 +1,7 @@
+{
+  "name": "RCS Remodeling | Premium DFW Remodeling & Demolition",
+  "description": "Ultra-premium remodeling, demolition, and cleanup services in Dallas-Fort Worth. Built on Honesty, Integrity, and Transparency.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
